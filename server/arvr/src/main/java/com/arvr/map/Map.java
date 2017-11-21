@@ -2,6 +2,9 @@ package com.arvr.map;
 
 import java.math.BigDecimal;
 
+import com.arvr.utils.MapSeWrapper;
+import com.arvr.websocket.MapSettingUpdate;
+
 public class Map {
 
 	private static Map instance = new Map(); 
@@ -38,5 +41,19 @@ public class Map {
 
 	public static void setZoom(int zoom) {
 		Map.mapZoom = zoom;
+	}
+	
+	public static MapSettingUpdate getMapSettings() 
+	{
+		MapSettingUpdate msu = new MapSettingUpdate(); 
+		msu.setCoords(getCurrentMapFocus());
+		msu.setZoom(getZoom());
+		
+		return msu; 
+	}
+	
+	public static MapSeWrapper getMapSettingsWrapper() 
+	{
+		return new MapSeWrapper(getCurrentMapFocus(), getZoom());
 	}
 }

@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class Coordinate {
 
-	public BigDecimal lattitude;
-	public BigDecimal longtitude; 
+	public BigDecimal lat;
+	public BigDecimal lng; 
 	
 	public Coordinate() {}
 	
@@ -14,7 +14,7 @@ public class Coordinate {
 			throw new IllegalArgumentException(); 
 		}
 		
-		this.lattitude = lattitude; 
-		this.longtitude = longtitude; 
+		this.lat = lattitude; 
+		this.lng = longtitude; 
 	}
 }

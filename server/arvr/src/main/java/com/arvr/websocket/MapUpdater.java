@@ -56,7 +56,7 @@ public class MapUpdater {
 			Map.setZoom(update.getZoom());;
 			Coordinate coords = update.getCoords(); 
 			try {
-				Map.setFocus(coords.lattitude, coords.longtitude);
+				Map.setFocus(coords.lat, coords.lng);
 			} catch (Exception e) {
 				log.error("Can#t update map focus", e); 
 			}
@@ -101,6 +101,7 @@ public class MapUpdater {
 		
 		this.sendRouteListUpdate(listManager.getRouteAsList());
 	}
+
 	
 	@MessageMapping("/test")
 	@SendTo("/map/test")
