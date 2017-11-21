@@ -1,0 +1,36 @@
+Route und POIs
+	Speichert eine gegebene POI ID für die Route
+	HTTPMETHOD: PUT
+	http://{serverip}:8080/poimanager/add/{poi_id}
+
+	Liefert eine Liste der aktuellen Route. (Alle POIs); 
+	HTTPMETHOD: GET
+	http://{serverip}:8080/poimanager/completelist
+
+	Löscht ein POI von der Route
+	HTTPMETHOD: DELETE
+	http://{serverip}:8080/poimanager/remove/{poi_id}
+	
+	
+Map
+	Legt den Focus der Karte fest
+	HTTPMETHOD: POST
+	HTTP Request Header Parameter: 
+		lattitude
+		longtitude
+	http://{serverip}:8080/mapsync/focus/set
+	
+	Liefert den aktuellen Focus der Karte
+	HTTPMETHOD: GET
+	http://{serverip}:8080/mapsync/focus/get
+	
+	Legt die Zoom-Stufe fest
+	HTTPMETHOD: POST
+	HTTP Request Header Parameter: 
+		lattitude
+		longtitude
+	http://{serverip}:8080/mapsync/zoom/set
+	
+	Liefert die aktuelle Zoom-Stufe
+	HTTPMETHOD: GET
+	http://{serverip}:8080/mapsync/zoom/get

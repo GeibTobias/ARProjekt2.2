@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<link href="/main.css" rel="stylesheet">-->
+    <script src="./js/sockjs-0.3.4.js"></script>
+    <script src="./js/stomp.js"></script>
+	
+	<script src="../../../../../build/websocket_con.js"></script>
+    <script src="./app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+	<div class="row">
+		<button id="sub" class="btn btn-primary" type="button" onclick="subscribeMapUpdates()">Start map updates</button>
+		<button id="unsub" class="btn btn-primary" type="button" onclick="unsubscribeMapUpdates()">Stop map updates</button>
+	</div>
+	<br/>
+	<div class="row">
+		<button id="sendTestMsg" class="btn btn-primary" type="button" onclick="sendName()">Send test msg</button>
+	</div>
+	<p>Open the console to see updates from the server!!!</p>
+	<br/>
+	<button class="btn btn-primary" type="button" onclick="sendMapUpdate()">Send map update</button>
+	<br/>
+	<button class="btn btn-primary" type="button" onclick="sendRoute([ 'Berlin', 'Paris', 'London' ])">Send route</button>
+	<br/>
+	<button class="btn btn-primary" type="button" onclick="getRoute()">Get Route</button>
+	<br/>
+	<button class="btn btn-primary" type="button" onclick="testAddPOI()">Add new POI</button>
+	<input type="text" id="newPOI" placeholder="POI ID" />
+	<br/>
+	<button class="btn btn-primary" type="button" onclick="testRemovePOI()">Remove new POI</button>
+	<input type="text" id="removePOI" placeholder="POI ID"/>
+	<br/>
+</div>
+</body>
+</html>
