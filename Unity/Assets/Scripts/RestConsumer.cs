@@ -11,9 +11,12 @@ public class RestConsumer : MonoBehaviour {
     public string server = "localhost";
     public string port = "8080";
 
-    private HttpExecutor httpExec; 
+    // interval that defines the time between two updates from the server
+    // interval is in seconds
+    public float refreshInterval = 1;
 
-    private long coroutineWait = 1;
+    private HttpExecutor httpExec = new HttpExecutor(); 
+
 
     # region DELEGATES
     public delegate void onMapSettingUpdate(MapSettings settings);
@@ -25,43 +28,19 @@ public class RestConsumer : MonoBehaviour {
     public event onRouteUpdate routeUpdate; 
     # endregion
 
+    private void Start()
+    {
+        init();
+    }
 
-    // Use this for initialization
-    void Start () {
-
-        httpExec = new HttpExecutor();
-
-        //Debug.Log("RestConsumer");
-        //getPOIList();
-
-        //Debug.Log("Get map settings");
-        //getMapSetting();
-
-        PoiWrapper t = new PoiWrapper();
-        t.pois = new string[] { "test", "test1" }; 
-        httpExec.HttpPost(string.Format("http://{0}:{1}/poimanager/add/list", this.server, this.port), t );
-
+    private void init()
+    {
         //mapUpdate += new onMapSettingUpdate(this.testMapEvent);
         //routeUpdate += new onRouteUpdate(this.testRouteEvent);
 
         this.StartCoroutine(MapSettingUpdater());
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    private void testMapEvent(MapSettings settings)
-    {
-        Debug.Log("EVENT: " + settings.zoom);
     }
-
-    private void testRouteEvent(string[] route)
-    {
-        Debug.Log("ROUTE: " + route); 
-    }
-
 
     public IEnumerator MapSettingUpdater()
     {
@@ -69,7 +48,7 @@ public class RestConsumer : MonoBehaviour {
         string[] lastPOI = { };
         while(true)
         {
-            yield return new WaitForSeconds(this.coroutineWait);
+            yield return new WaitForSeconds(this.refreshInterval);
             MapSettings ms = getMapSetting(); 
             if( ms != null && !lastUpdate.Equals(ms) )
             {
@@ -95,14 +74,10 @@ public class RestConsumer : MonoBehaviour {
 
     public MapSettings getMapSetting()
     {
-        //Debug.Log("Get map settings");
         string url = string.Format("http://{0}:{1}/mapsync/mapget", this.server, this.port);
-
         string result = httpExec.HttpGet(url);
-        //Debug.Log("map: " + result); 
 
         MapSettings wrapperResult = JsonUtility.FromJson<MapSettings>(result);
-
         return wrapperResult;
     }
 
@@ -142,17 +117,33 @@ public class RestConsumer : MonoBehaviour {
         httpExec.HttpDelete(url);
     }
 
+
+    public void removeAllPOI()
+    {
+        Debug.Log("Remove all POIs");
+        string url = string.Format("http://{0}:{1}/poimanager/removeall", this.server, this.port);
+
+        httpExec.HttpDelete(url);
+    }
+
     public string[] getPOIList()
     {
-        //Debug.Log("Get POI list");
         string url = string.Format("http://{0}:{1}/poimanager/unity/completelist", this.server, this.port);
 
         string result = httpExec.HttpGet(url);
-
         PoiWrapper wrapperResult = JsonUtility.FromJson<PoiWrapper>(result);
-        //Debug.Log(wrapperResult);
 
         return wrapperResult.pois; 
+    }
+
+    private void testMapEvent(MapSettings settings)
+    {
+        Debug.Log("EVENT: " + settings.zoom);
+    }
+
+    private void testRouteEvent(string[] route)
+    {
+        Debug.Log("ROUTE: " + route);
     }
 }
 

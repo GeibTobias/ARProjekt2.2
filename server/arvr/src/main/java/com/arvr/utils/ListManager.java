@@ -1,7 +1,6 @@
 package com.arvr.utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class ListManager {
@@ -24,6 +23,10 @@ public class ListManager {
 	public void removePOI(String poi_id) {
 		
 		route.remove(poi_id); 
+	}
+	
+	public void clear() {
+		route.clear(); 
 	}
 	
 	public List<String> getRouteAsList() {

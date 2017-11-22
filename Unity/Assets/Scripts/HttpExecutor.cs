@@ -5,7 +5,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class HttpExecutor : MonoBehaviour{
+public class HttpExecutor {
 
 
     public void HttpDelete(string url)
@@ -29,6 +29,8 @@ public class HttpExecutor : MonoBehaviour{
             if (resp.StatusCode != HttpStatusCode.OK)
             {
                 Debug.LogError("Error in http " + httpMethod);
+
+                throw new WebException(resp.StatusDescription); 
             }
         }
     }
@@ -41,6 +43,11 @@ public class HttpExecutor : MonoBehaviour{
         using (HttpWebResponse resp = req.GetResponse()
                                       as HttpWebResponse)
         {
+            if( resp.StatusCode != HttpStatusCode.OK )
+            {
+                throw new WebException(resp.StatusDescription);
+            }
+
             StreamReader reader =
                 new StreamReader(resp.GetResponseStream());
             result = reader.ReadToEnd();
@@ -59,8 +66,13 @@ public class HttpExecutor : MonoBehaviour{
         UnityWebRequest request = UnityWebRequest.Post(url, jsonData);
         request.SetRequestHeader("Content-Type", "application/json");
         UnityWebRequestAsyncOperation op = request.SendWebRequest();
-
+        
         op.completed += Op_completed;
+
+        if( request.responseCode != 0 && request.responseCode != (long)System.Net.HttpStatusCode.OK)
+        {
+            throw new WebException(request.error);
+        }
     }
 
     private void Op_completed(AsyncOperation obj)

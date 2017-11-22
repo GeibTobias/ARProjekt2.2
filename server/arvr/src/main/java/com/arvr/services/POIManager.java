@@ -98,6 +98,15 @@ public class POIManager {
 		onMapUpdate(); 
 	}
 	
+	@RequestMapping(path = "/removeall", method = RequestMethod.DELETE)
+	public void removeAll()
+	{
+		log.info("Remove all from POI list");
+		this.listManager.clear(); 
+		
+		onMapUpdate(); 
+	}
+	
 	private void onMapUpdate() {
 				
 		this.mapUpdater.onRouteUpdate();

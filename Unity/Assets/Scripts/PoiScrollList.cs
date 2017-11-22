@@ -24,14 +24,25 @@ public class PoiScrollList : MonoBehaviour {
 	public Text myItemCountDisplay;
 	public SimpleObjectPool poiObjectPool;
 
+    public RestConsumer restConsumer; 
+
 
 	// Use this for initialization
 	void Start () 
 	{
-		RefreshDisplay ();
+        restConsumer = GameObject.Find("RestConsumer").GetComponent<RestConsumer>();
+
+        // register events
+        restConsumer.routeUpdate += RestConsumer_routeUpdate;
+
+        // init itemList
+        string[] pois = restConsumer.getPOIList();
+        initItemList(pois); 
+
+        RefreshDisplay ();
 	}
 
-	void RefreshDisplay()
+    void RefreshDisplay()
 	{
 		myItemCountDisplay.text = "POI Count: " + itemList.Count.ToString () + "/10";
 		RemovePois ();
@@ -60,10 +71,37 @@ public class PoiScrollList : MonoBehaviour {
 		}
 	}
 
-	public void AddItem(Item itemToAdd)
+    private void initItemList(string[] pois)
+    {
+        List<POI> poiObjList = new List<POI>(GameObject.FindObjectsOfType<POI>());
+        itemList.Clear(); 
+
+        foreach (string poiId in pois)
+        {
+            POI p = poiObjList.Find(x => x.poiID == poiId);
+
+            if (p != null )
+            {
+                itemList.Add(new Item(p.poiID, p.name, p.poiImage));
+            }
+        }
+
+        RefreshDisplay();
+    }
+
+    private void RestConsumer_routeUpdate(string[] route)
+    {
+        initItemList(route); 
+    }
+
+
+    public void AddItem(Item itemToAdd)
 	{
 		if (itemList.Find(x => x.poiID == itemToAdd.poiID) == null) {
 			itemList.Add (itemToAdd);
+
+            // add poi to server list
+            restConsumer.addPOI(itemToAdd.poiID); 
 		}
 
 		RefreshDisplay ();
@@ -84,6 +122,9 @@ public class PoiScrollList : MonoBehaviour {
 			if (itemList[i] == itemToRemove)
 			{
 				itemList.RemoveAt(i);
+
+                // remove item from poi list
+                restConsumer.removePOI(itemList[i].poiID);
 			}
 		}
 
@@ -101,6 +142,8 @@ public class PoiScrollList : MonoBehaviour {
 		if (index > 0) {
 			itemList.Remove (item);
 			itemList.Insert (index - 1, item);
+
+            restConsumer.addPOIList(this.getPoiIdArray());
 		}
 
 		RefreshDisplay ();
@@ -111,8 +154,27 @@ public class PoiScrollList : MonoBehaviour {
 		if (index < itemList.Count - 1) {
 			itemList.Remove (item);
 			itemList.Insert (index + 1, item);
-		}
+
+            restConsumer.addPOIList(this.getPoiIdArray());
+        }
 
 		RefreshDisplay ();
 	}
+
+    private string[] getPoiIdArray()
+    {
+        string[] result = new string[0];
+        if (itemList.Count != 0)
+        {
+            List<string> tmp = new List<string>(); 
+            foreach (Item item in itemList)
+            {
+                tmp.Add(item.poiID); 
+            }
+
+            result = tmp.ToArray(); 
+        }
+
+        return result; 
+    }
 }
