@@ -11,6 +11,7 @@ function findPoi(id) {
 }
 
 function addMarker(place, codeID) {
+    console.log("addMaker: " + place + " - " + codeID)
     id = codeID;
     //if (id < 10) {
     //    id = '0' + id;
@@ -25,7 +26,7 @@ function addMarker(place, codeID) {
         map: map,
         position: place.geometry.location,
         icon: {
-            url: image ,
+            url: image,
             scaledSize: new google.maps.Size(146, 71)
         }
     });
@@ -50,7 +51,7 @@ function initPois(startLocation, callback) {
 
                 place = results[i];
                 pois.push(place);
-                addMarker(place, (pois.length - 1) % 4);
+                addMarker(place, (pois.length - 1));
             }
 
             if (pagesCount < 1) {
@@ -61,6 +62,29 @@ function initPois(startLocation, callback) {
             }
         }
     });
+}
+
+function initPoisWithIds(ids, callback) {
+    var service = new google.maps.places.PlacesService(map);
+
+    var callbackCount = 0;
+    var i = 0;
+
+    ids.forEach(function (id) {
+        service.getDetails({
+            placeId: id
+        }, function (result, status) {
+            pois.push(result);
+            addMarker(result, pois.length);
+
+            if (callbackCount == ids.length) {
+                callback()
+            } else {
+                callbackCount++;
+            }
+        });
+    });
+
 }
 
 function onPoiListChanged(poiIDs) {
@@ -99,8 +123,8 @@ function calculateRoute(waypoints) {
 function initMap() {
     // New York
     var start = {
-        lat: 40.697139,
-        lng: -73.979781
+        lat: 40.748742,
+        lng: -73.985611
     };
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -118,19 +142,24 @@ function initMap() {
         }
     });
 
-    initPois(start, function () {
+    /*initPois(start, function () {
         console.log(pois);
         onPoiListChanged([pois[0].place_id, pois[1].place_id, pois[2].place_id, pois[3].place_id, pois[4].place_id, pois[5].place_id, pois[6].place_id, pois[7].place_id, pois[8].place_id, pois[9].place_id]);
-        
+
+        adaptMarkerToZoomLevel(map.zoom);
+    });*/
+
+    initPoisWithIds(ourPlaces, function ()  {
+        console.log(pois);
         adaptMarkerToZoomLevel(map.zoom);
     });
 
     map.addListener('zoom_changed', function () {
         console.log('zoom level: ' + map.zoom);
-        
+
         adaptMarkerToZoomLevel(map.zoom)
     });
-    
+
     connect();
     getRoute();
 }
@@ -166,7 +195,7 @@ function adaptMarkerToZoomLevel(level) {
                      1,
                      1,
                      1];
-    
+
     for (var i = 0; i < pois.length - 1; i++) {
         pois[i].marker.setMap(map);
     }
@@ -185,100 +214,106 @@ function getDistanceBetween(placeA, placeB) {
 }
 
 var stompClient = null;
-var reconnect = false; 
+var reconnect = false;
 
 //
 // Connect to server websocket
 //
 function connect() {
-	
-	reconnect = true; 
-	
+
+    reconnect = true;
+
     var socket = new SockJS('http://localhost:8080/ws-map-update');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
-		console.log("connecting..."); 
+        console.log("connecting...");
         console.log('Connected: ' + frame);
 
-		stompClient.subscribe('/map/test', function(data) {
-			console.log("Received data from server: ", data); 
-		}); 
-		
-		stompClient.subscribe('/map/route/update', function(route) {
-			onRouteUpdate(JSON.parse(route.body)); 
-		}); 
+        stompClient.subscribe('/map/test', function (data) {
+            console.log("Received data from server: ", data);
+        });
+
+        stompClient.subscribe('/map/route/update', function (route) {
+            onRouteUpdate(JSON.parse(route.body));
+        });
     });
-	
-	socket.onclose = function(e) {
-		
-		if( reconnect ) {
-			setTimeout(() => {
-				connect();
-			  }, 500);
-		}
-	};
+
+    socket.onclose = function (e) {
+
+        if (reconnect) {
+            setTimeout(() => {
+                connect();
+            }, 500);
+        }
+    };
 }
 
 function disconnect() {
-	
-	reconnect = false; 
-	
+
+    reconnect = false;
+
     if (stompClient !== null) {
         stompClient.disconnect();
-		stompClient = null; 
+        stompClient = null;
     }
 
     console.log("Disconnected");
 }
 
-mapUpdateCon = null; 
+mapUpdateCon = null;
 // 
 // Method to subscribe to map updates
 //
 function subscribeMapUpdates() {
-	mapUpdateCon = stompClient.subscribe('/map/update', function (update) {
-		onMapSettingUpdate(JSON.parse(update.body));
-	});
+    mapUpdateCon = stompClient.subscribe('/map/update', function (update) {
+        onMapSettingUpdate(JSON.parse(update.body));
+    });
 }
 
 //
 // Method to unsubscribe map updates
 //
 function unsubscribeMapUpdates() {
-	mapUpdateCon.unsubscribe(); 
-	mapUpdateCon = null; 
+    mapUpdateCon.unsubscribe();
+    mapUpdateCon = null;
 }
 
 
 
 function onRouteUpdate(routeList) {
-	console.log(routeList); 
-	
-	// 
-	// implement here what you wanna do with the new route updates
-	//
+    console.log(routeList);
+
+    // 
+    // implement here what you wanna do with the new route updates
+    //
     onPoiListChanged(routeList);
 }
 
 function onMapSettingUpdate(update) {
-	console.log("update from server: ", update); 
-	
-	// 
-	// implement here what you wanna do with map updates
-	//
+    console.log("update from server: ", update);
+
+    // 
+    // implement here what you wanna do with map updates
+    //
     map.setZoom(update.zoom);
     map.panTo(update.coords);
 }
 
 function sendMapUpdate(lattitude, longtitude, zoom) {
-	
-	//
-	// pass to this function the necessary map updates
-	// updates will be send to server
-	//
-	// example how to send!
+
+    //
+    // pass to this function the necessary map updates
+    // updates will be send to server
+    //
+    // example how to send!
     // old: stompClient.send("/app/setmap", {}, JSON.stringify({'coords': { 'lattitude' : 232.23, 'longtitude' : '4555.4323' }, 'zoom' : 1 }));
-	stompClient.send("/app/setmap", {}, JSON.stringify({'coords': { 'lat' : 232.23, 'lng' : '4555.4323' }, 'zoom' : 1 }));
+    stompClient.send("/app/setmap", {}, JSON.stringify({
+        'coords': {
+            'lat': 232.23,
+            'lng': '4555.4323'
+        },
+        'zoom': 1
+    }));
 }
 
 
@@ -287,7 +322,7 @@ function sendMapUpdate(lattitude, longtitude, zoom) {
 // The old route will be replaced by this
 //
 function sendRoute(route) {
-	stompClient.send("/app/map/route/clientupdate", {}, JSON.stringify(route)); 
+    stompClient.send("/app/map/route/clientupdate", {}, JSON.stringify(route));
 }
 
 //
@@ -295,14 +330,14 @@ function sendRoute(route) {
 // subscribed method onRouteUpdate will be invoked wiht the response
 //
 function getRoute() {
-	stompClient.send("/app/map/route/get", {}, null); 
+    stompClient.send("/app/map/route/get", {}, null);
 }
 
 
 function addPOI(poi_string) {
-	stompClient.send("/app/map/route/add", {}, poi_string); 
+    stompClient.send("/app/map/route/add", {}, poi_string);
 }
 
 function removePOI(poi_string) {
-	stompClient.send("/app/map/route/remove", {}, poi_string); 
+    stompClient.send("/app/map/route/remove", {}, poi_string);
 }
