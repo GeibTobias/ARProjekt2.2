@@ -5,9 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Content
-  - Cyber
-  - Tower
   - Camera
+  - POI
   layers:
   - Default
   - TransparentFX

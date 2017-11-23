@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -180,8 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9560a1e544a3df41b2cfe36683bf8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  server: 192.168.0.2
+  server: 192.168.178.20
   port: 8080
+  refreshInterval: 1
 --- !u!4 &67652658
 Transform:
   m_ObjectHideFlags: 0
@@ -888,7 +889,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5a896ca5cf8f14e15bd81e9c5c6f9339, type: 3}
       propertyPath: m_TagString
-      value: Tower
+      value: POI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a896ca5cf8f14e15bd81e9c5c6f9339, type: 3}
@@ -934,7 +935,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: cf3910b7639e12447827e45f63f60201, type: 3}
       propertyPath: m_TagString
-      value: Cyber
+      value: POI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf3910b7639e12447827e45f63f60201, type: 3}
@@ -1071,7 +1072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poiID: ChIJtcaxrqlZwokRfwmmibzPsTU
-  trackerID: 0
+  trackerID: 1
   poiName: Empire State Building
   poiImage: {fileID: 21300000, guid: a263355d747bc4183b79b74668a5c9f8, type: 3}
   content: {fileID: 1743389154}
@@ -1169,7 +1170,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470891777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 593.5, y: 294, z: 0}
+  m_LocalPosition: {x: 745.5, y: 419, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 938361635}
@@ -1396,7 +1397,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685819318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -181.19998, z: 0}
+  m_LocalPosition: {x: 0, y: -306.19995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 938361635}
@@ -1539,7 +1540,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1743389154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000014195755, y: 0.08337402, z: 0}
+  m_LocalPosition: {x: 0.000014195755, y: 0.0899353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2112385944}
@@ -1547,7 +1548,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000014195755, y: 325.83337}
+  m_AnchoredPosition: {x: 0.000014195755, y: 325.83994}
   m_SizeDelta: {x: 0, y: 428.41}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1743389156
@@ -1677,7 +1678,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1878807668}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99954945
+  m_Size: 0.99955577
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1770,7 +1771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8274c29e17b68f34ca35a3676b269178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poiID: sdlhfksd
+  poiID: ChIJN0qhSgJZwokRmQJ-MIEQq08
   trackerID: 3
   poiName: Chrysler Building
   poiImage: {fileID: 21300000, guid: cfe155ddc47a9483d83ae194f3c07148, type: 3}
@@ -1811,7 +1812,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878807667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.14227295, z: 0}
+  m_LocalPosition: {x: 0, y: -0.14025879, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1482670723}

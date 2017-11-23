@@ -30,7 +30,7 @@ public class POI : MonoBehaviour {
 				BoxCollider bc = hit.collider as BoxCollider;
 				POI poi = gameObject.GetComponent<POI> ();
 				BoxCollider poiBC = gameObject.GetComponent<BoxCollider> ();
-				if (bc && poiBC.enabled && int.Parse(poi.trackerID) == int.Parse(trackerID)) {
+				if (bc && bc == poiBC && int.Parse(poi.trackerID) == int.Parse(trackerID)) {
 					
 					scrollList.AddItem (new Item(poiID, poiName, poiImage));
 				}

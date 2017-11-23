@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class RestConsumer : MonoBehaviour {
 
-    public string server = "localhost";
-    public string port = "8080";
+    public string server;
+    public string port;
 
     // interval that defines the time between two updates from the server
     // interval is in seconds

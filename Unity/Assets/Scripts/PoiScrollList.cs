@@ -37,7 +37,7 @@ public class PoiScrollList : MonoBehaviour {
 
         // init itemList
         string[] pois = restConsumer.getPOIList();
-        initItemList(pois); 
+		UpdateItemList(pois); 
 
         RefreshDisplay ();
 	}
@@ -71,27 +71,9 @@ public class PoiScrollList : MonoBehaviour {
 		}
 	}
 
-    private void initItemList(string[] pois)
-    {
-        List<POI> poiObjList = new List<POI>(GameObject.FindObjectsOfType<POI>());
-        itemList.Clear(); 
-
-        foreach (string poiId in pois)
-        {
-            POI p = poiObjList.Find(x => x.poiID == poiId);
-
-            if (p != null )
-            {
-                itemList.Add(new Item(p.poiID, p.name, p.poiImage));
-            }
-        }
-
-        RefreshDisplay();
-    }
-
     private void RestConsumer_routeUpdate(string[] route)
     {
-        initItemList(route); 
+		UpdateItemList (route);
     }
 
 
@@ -107,11 +89,26 @@ public class PoiScrollList : MonoBehaviour {
 		RefreshDisplay ();
 	}
 
-	public void UpdateItemList(Item[] itemsToAdd) {
-		RemoveAllItems ();
+	public void UpdateItemList(string[] itemsToAdd) {
+		itemList.Clear();
 
-		for (int i = 0; i < itemsToAdd.Length; i++) {
-			AddItem (itemsToAdd [i]);
+		GameObject[] poiObjList = GameObject.FindGameObjectsWithTag ("POI");
+		List<POI> pois = new List<POI>();
+
+		foreach (GameObject poiObj in poiObjList) {
+			POI poi = poiObj.GetComponent<POI> ();
+			if (poi) {
+				pois.Add (poi);
+			}
+		}
+
+		foreach (string poiID in itemsToAdd) {
+			POI poi = pois.Find(x => x.poiID == poiID);
+
+			if (poi) {
+				Debug.Log ("ID: " + poi.poiID + "Name: " + poi.name);
+				AddItem(new Item(poi.poiID, poi.poiName, poi.poiImage));
+			}
 		}
 	}
 
@@ -121,10 +118,10 @@ public class PoiScrollList : MonoBehaviour {
 		{
 			if (itemList[i] == itemToRemove)
 			{
-				itemList.RemoveAt(i);
+				// remove item from poi list
+				restConsumer.removePOI(itemList[i].poiID);
 
-                // remove item from poi list
-                restConsumer.removePOI(itemList[i].poiID);
+				itemList.RemoveAt(i);
 			}
 		}
 
