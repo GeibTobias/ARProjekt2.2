@@ -5,7 +5,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class HttpExecutor {
+public class HttpExecutor : MonoBehaviour {
 
 
     public void HttpDelete(string url)
@@ -54,6 +54,26 @@ public class HttpExecutor {
         }
 
         return result;
+    }
+
+
+    public void HttpGetAsync(string url)
+    {
+        StartCoroutine(url); 
+    }
+
+    private IEnumerable doHttpGetAsync(string url)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(url);
+        
+        yield return request.SendWebRequest();
+
+        if (request.isNetworkError || request.isHttpError)
+        {
+            throw new WebException(request.error);
+        }
+
+        Debug.Log(request.downloadHandler.text);
     }
 
 

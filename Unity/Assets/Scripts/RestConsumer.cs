@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class RestConsumer : MonoBehaviour {
 
@@ -39,35 +40,23 @@ public class RestConsumer : MonoBehaviour {
         //routeUpdate += new onRouteUpdate(this.testRouteEvent);
 
         this.StartCoroutine(MapSettingUpdater());
-
     }
 
     public IEnumerator MapSettingUpdater()
     {
         MapSettings lastUpdate = new MapSettings();
         string[] lastPOI = { };
+        float interval = this.refreshInterval; 
         while(true)
         {
-            yield return new WaitForSeconds(this.refreshInterval);
-            MapSettings ms = getMapSetting(); 
-            if( ms != null && !lastUpdate.Equals(ms) )
+            yield return new WaitForSeconds(interval);
+            try
             {
-                // trigger event
-                if (mapUpdate != null)
-                {
-                    mapUpdate(ms);
-                }
-                lastUpdate = ms; 
-            }
+                StartCoroutine(this.getPOIListAsync());
 
-            string[] pois = this.getPOIList(); 
-            if( !pois.SequenceEqual(lastPOI) )
+            } catch(Exception e)
             {
-                if (routeUpdate != null)
-                {
-                    routeUpdate(pois);
-                }
-                lastPOI = pois; 
+                Debug.LogError("Server connection error: " + e.Message);
             }
         }
     }
@@ -93,17 +82,39 @@ public class RestConsumer : MonoBehaviour {
         httpExec.HttpPut(url); 
     }
 
-    public void addPOIList(string[] list)
+    public IEnumerator addPOIAsync(string poi_id)
+    {
+        if (poi_id == null)
+            throw new Exception("Arguemtn is null");
+
+        Debug.Log("Add POI to server list: " + poi_id);
+        string url = string.Format("http://{0}:{1}/poimanager/add/{2}", this.server, this.port, poi_id);
+
+        byte[] data = System.Text.Encoding.UTF8.GetBytes(poi_id);
+        using (UnityWebRequest request = UnityWebRequest.Put(url, data))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request);
+        }
+    }
+
+    public IEnumerator addPOIListAsync(string[] list)
     {
         if (list == null)
-            throw new Exception("Argument null"); 
+            throw new Exception("Argument null");
 
         string url = string.Format("http://{0}:{1}/poimanager/add/list", this.server, this.port);
-
         PoiWrapper pw = new PoiWrapper();
-        pw.pois = list; 
+        pw.pois = list;
+        string jsonData = JsonUtility.ToJson(pw);
 
-        httpExec.HttpPost(url, pw);
+        using (UnityWebRequest request = UnityWebRequest.Post(url, jsonData))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request); 
+        }
     }
 
     public void removePOI(string poi_id)
@@ -117,6 +128,21 @@ public class RestConsumer : MonoBehaviour {
         httpExec.HttpDelete(url);
     }
 
+    public IEnumerator removePOIAsync(string poi_id)
+    {
+        if (poi_id == null)
+            throw new Exception("Arguemtn is null");
+
+        Debug.Log("Remove POI from server list: " + poi_id);
+        string url = string.Format("http://{0}:{1}/poimanager/remove/{2}", this.server, this.port, poi_id);
+
+        using (UnityWebRequest request = UnityWebRequest.Delete(url))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request);
+        }
+    }
 
     public void removeAllPOI()
     {
@@ -124,6 +150,39 @@ public class RestConsumer : MonoBehaviour {
         string url = string.Format("http://{0}:{1}/poimanager/removeall", this.server, this.port);
 
         httpExec.HttpDelete(url);
+    }
+
+    public IEnumerator removeAllPOIAsync()
+    {
+        Debug.Log("Remove all POIs");
+        string url = string.Format("http://{0}:{1}/poimanager/removeall", this.server, this.port);
+
+        using (UnityWebRequest request = UnityWebRequest.Delete(url))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request);
+        }
+    }
+
+    public IEnumerator getPOIListAsync()
+    {
+        string url = string.Format("http://{0}:{1}/poimanager/unity/completelist", this.server, this.port);
+
+        using (UnityWebRequest request = UnityWebRequest.Get(url))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request); 
+
+            string result = request.downloadHandler.text;
+            PoiWrapper wrapperResult = JsonUtility.FromJson<PoiWrapper>(result);
+
+            if (routeUpdate != null && wrapperResult != null)
+            {
+                routeUpdate(wrapperResult.pois);
+            }
+        }
     }
 
     public string[] getPOIList()
@@ -134,6 +193,15 @@ public class RestConsumer : MonoBehaviour {
         PoiWrapper wrapperResult = JsonUtility.FromJson<PoiWrapper>(result);
 
         return wrapperResult.pois; 
+    }
+
+    private void isWebRequestError(UnityWebRequest request)
+    {
+        if( request.isNetworkError || request.isHttpError )
+        {
+            Debug.LogError(request.error);
+            throw new WebException(request.error); 
+        }
     }
 
     private void testMapEvent(MapSettings settings)

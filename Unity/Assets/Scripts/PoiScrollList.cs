@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 [System.Serializable]
 public class Item
@@ -36,8 +37,13 @@ public class PoiScrollList : MonoBehaviour {
         restConsumer.routeUpdate += RestConsumer_routeUpdate;
 
         // init itemList
-        string[] pois = restConsumer.getPOIList();
-		UpdateItemList(pois); 
+        try
+        {
+            StartCoroutine(restConsumer.getPOIListAsync()); 
+        } catch(Exception e)
+        {
+            onRestError(e); 
+        }
 
         RefreshDisplay ();
 	}
@@ -73,7 +79,13 @@ public class PoiScrollList : MonoBehaviour {
 
     private void RestConsumer_routeUpdate(string[] route)
     {
-		UpdateItemList (route);
+        try
+        {
+            UpdateItemList(route);
+        } catch(Exception e)
+        {
+            onRestError(e);
+        }
     }
 
 
@@ -83,7 +95,13 @@ public class PoiScrollList : MonoBehaviour {
 			itemList.Add (itemToAdd);
 
             // add poi to server list
-            restConsumer.addPOI(itemToAdd.poiID); 
+            try
+            {
+                StartCoroutine(restConsumer.addPOIAsync(itemToAdd.poiID));
+            }catch(Exception e)
+            {
+                onRestError(e);
+            }
 		}
 
 		RefreshDisplay ();
@@ -105,10 +123,16 @@ public class PoiScrollList : MonoBehaviour {
 		foreach (string poiID in itemsToAdd) {
 			POI poi = pois.Find(x => x.poiID == poiID);
 
-			if (poi) {
-				Debug.Log ("ID: " + poi.poiID + "Name: " + poi.name);
-				AddItem(new Item(poi.poiID, poi.poiName, poi.poiImage));
-			}
+            if (poi)
+            {
+                //Debug.Log("ID: " + poi.poiID + "Name: " + poi.name);
+                // can't use method AddItem -> cyclic message to server will be created!!!
+                Item itemToAdd = new Item(poi.poiID, poi.poiName, poi.poiImage);
+                if (itemList.Find(x => x.poiID == itemToAdd.poiID) == null)
+                {
+                    itemList.Add(itemToAdd);
+                }
+            }
 		}
 	}
 
@@ -118,8 +142,14 @@ public class PoiScrollList : MonoBehaviour {
 		{
 			if (itemList[i] == itemToRemove)
 			{
-				// remove item from poi list
-				restConsumer.removePOI(itemList[i].poiID);
+                // remove item from poi list
+                try
+                {
+                    StartCoroutine(restConsumer.removePOIAsync(itemList[i].poiID));
+                }catch(Exception e)
+                {
+                    onRestError(e);
+                }
 
 				itemList.RemoveAt(i);
 			}
@@ -140,8 +170,9 @@ public class PoiScrollList : MonoBehaviour {
 			itemList.Remove (item);
 			itemList.Insert (index - 1, item);
 
-            restConsumer.addPOIList(this.getPoiIdArray());
-		}
+            updateServerRoute();
+
+        }
 
 		RefreshDisplay ();
 	}
@@ -152,11 +183,21 @@ public class PoiScrollList : MonoBehaviour {
 			itemList.Remove (item);
 			itemList.Insert (index + 1, item);
 
-            restConsumer.addPOIList(this.getPoiIdArray());
+            updateServerRoute(); 
         }
 
 		RefreshDisplay ();
 	}
+
+    private void updateServerRoute()
+    {
+        try { 
+            StartCoroutine(restConsumer.addPOIListAsync(this.getPoiIdArray()));
+        }catch(Exception e)
+        {
+            onRestError(e); 
+        }
+    }
 
     private string[] getPoiIdArray()
     {
@@ -173,5 +214,10 @@ public class PoiScrollList : MonoBehaviour {
         }
 
         return result; 
+    }
+
+    private void onRestError(Exception e)
+    {
+        Debug.LogError("Error during server request: " + e.Message); 
     }
 }
