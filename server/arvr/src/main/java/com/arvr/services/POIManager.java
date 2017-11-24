@@ -1,8 +1,6 @@
 package com.arvr.services;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arvr.utils.ListManager;
 import com.arvr.utils.PoiWrapper;
 import com.arvr.websocket.MapUpdater;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
@@ -52,23 +49,22 @@ public class POIManager {
 		
 		log.info("Add POI list " + json);
 		
+		String data = URLDecoder.decode(json);
 		
-			String data = URLDecoder.decode(json);
+		log.info(data);
+		ObjectMapper mapper = new ObjectMapper();
+		PoiWrapper wrapper = null;
+		try {
+			wrapper = mapper.readValue(data, PoiWrapper.class);
 			
-			log.info(data);
-			ObjectMapper mapper = new ObjectMapper();
-			PoiWrapper wrapper = null;
-			try {
-				wrapper = mapper.readValue(data, PoiWrapper.class);
-				
-				String[] tmp = Arrays.copyOf(wrapper.pois, wrapper.pois.length, String[].class); 
-				ArrayList<String> alist = new ArrayList<String>(Arrays.asList(tmp)); 
-				this.listManager.setRoute(alist);
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
+			String[] tmp = Arrays.copyOf(wrapper.pois, wrapper.pois.length, String[].class); 
+			ArrayList<String> alist = new ArrayList<String>(Arrays.asList(tmp)); 
+			this.listManager.setRoute(alist);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 	}
 	
 	@RequestMapping(path = "/completelist", method = RequestMethod.GET)

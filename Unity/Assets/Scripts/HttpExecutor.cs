@@ -75,28 +75,4 @@ public class HttpExecutor : MonoBehaviour {
 
         Debug.Log(request.downloadHandler.text);
     }
-
-
-    public void HttpPost(string url, PoiWrapper data)
-    {
-        string jsonData = JsonUtility.ToJson(data);
-        Debug.Log("Json data");
-        Debug.Log(jsonData);
-
-        UnityWebRequest request = UnityWebRequest.Post(url, jsonData);
-        request.SetRequestHeader("Content-Type", "application/json");
-        UnityWebRequestAsyncOperation op = request.SendWebRequest();
-        
-        op.completed += Op_completed;
-
-        if( request.responseCode != 0 && request.responseCode != (long)System.Net.HttpStatusCode.OK)
-        {
-            throw new WebException(request.error);
-        }
-    }
-
-    private void Op_completed(AsyncOperation obj)
-    {
-        Debug.Log(obj);
-    }
 }

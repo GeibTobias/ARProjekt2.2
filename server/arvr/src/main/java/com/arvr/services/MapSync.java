@@ -1,11 +1,13 @@
 package com.arvr.services;
 
 import java.math.BigDecimal;
+import java.net.URLDecoder;
 
 import javax.ws.rs.Produces;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,10 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arvr.map.Coordinate;
 import com.arvr.map.Map;
 import com.arvr.utils.MapSeWrapper;
-import com.arvr.websocket.MapSettingUpdate;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
-@RequestMapping(path = "/mapsync/")
+@RequestMapping(path = "/mapsync")
 public class MapSync {
 
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
@@ -61,8 +63,27 @@ public class MapSync {
 	
 	@RequestMapping(path = "/mapget", method = RequestMethod.GET)
 	@Produces("application/json")
-	public MapSeWrapper getMapSettings()
-	{
+	public MapSeWrapper getMapSettings() {
 		return Map.getMapSettingsWrapper(); 
+	}
+	
+	@RequestMapping(path = "/mapset", method = RequestMethod.POST)
+	public void setMapSettings(@RequestBody String json) {
+		
+		String data = URLDecoder.decode(json);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		MapSeWrapper settings = null;
+		try {
+			settings = mapper.readValue(data, MapSeWrapper.class);
+
+		
+			log.info("Map Setting Update: " + settings.lat + " : " + settings.lng + ". Zoom: " + settings.zoom);
+			Map.setZoom(settings.zoom);
+
+			Map.setFocus(new BigDecimal(settings.lat), new BigDecimal(settings.lng));
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
 	}
 }

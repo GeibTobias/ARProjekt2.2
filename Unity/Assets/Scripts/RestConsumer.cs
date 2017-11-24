@@ -42,6 +42,22 @@ public class RestConsumer : MonoBehaviour {
         this.StartCoroutine(MapSettingUpdater());
     }
 
+    public IEnumerator setMapSettings(double lat, double lng, int zoom)
+    {
+        string url = string.Format("http://{0}:{1}/mapsync/mapset", this.server, this.port);
+
+        MapSettings ms = new MapSettings(lat, lng, zoom);
+        string jsonData = JsonUtility.ToJson(ms);
+
+        using (UnityWebRequest request = UnityWebRequest.Post(url, jsonData))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request);
+            Debug.Log("sent");
+        }
+    }
+
     public IEnumerator MapSettingUpdater()
     {
         MapSettings lastUpdate = new MapSettings();
@@ -227,6 +243,15 @@ public class MapSettings
     public double lat;
     public double lng;
     public int zoom;
+
+    public MapSettings() { }
+
+    public MapSettings(double lat, double lng, int zoom)
+    {
+        this.lat = lat;
+        this.lng = lng;
+        this.zoom = zoom; 
+    }
 
     public override bool Equals(object obj)
     {
