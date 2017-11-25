@@ -83,7 +83,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 		// Enable rendering:
 		foreach (var component in rendererComponents) {
 			POI poi = component.gameObject.GetComponentInParent<POI>();
-			if (int.Parse(poi.trackerID) == int.Parse(mTrackableBehaviour.VuMarkTarget.InstanceId.StringValue)) {
+			if (poi && int.Parse(poi.trackerID) == int.Parse(mTrackableBehaviour.VuMarkTarget.InstanceId.StringValue)) {
 				component.enabled = true;
 			}
 		}

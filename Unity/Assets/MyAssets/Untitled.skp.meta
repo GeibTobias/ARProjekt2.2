@@ -1,0 +1,202 @@
+fileFormatVersion: 2
+guid: 0f67adfc7cf2ffb4bb288d43ff9134a8
+timeCreated: 1511586241
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 0000000001000000020000000300000004000000050000000600000007000000080000000b0000000c0000000d0000000e000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 07a0208c729e536aea5c9b52829ff4cc
+  longitude: -74.044514774668
+  latitude: 40.68920034852287
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 42.722473, y: 0.3851444, z: -20.673285}
+      lookAt: {x: -68.28154, y: 118.17201, z: 128.58145}
+      up: {x: 0.31926873, y: 0.8448561, z: -0.4292851}
+      fov: 60
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: base
+    100002: Bryce
+    100004: Google Earth Terrain
+    100006: ske4A
+    100008: ske6C
+    100010: statue
+    100012: //RootNode
+    400000: base
+    400002: Bryce
+    400004: Google Earth Terrain
+    400006: ske4A
+    400008: ske6C
+    400010: statue
+    400012: //RootNode
+    2300000: base
+    2300002: Bryce
+    2300004: Google Earth Terrain
+    2300006: ske4A
+    2300008: ske6C
+    2300010: statue
+    3300000: base
+    3300002: Bryce
+    3300004: Google Earth Terrain
+    3300006: ske4A
+    3300008: ske6C
+    3300010: statue
+    4300000: Mesh Bryce
+    4300002: Mesh ske4A
+    4300004: Mesh ske6C
+    4300006: Mesh Google Earth Terrain
+    4300008: Mesh base
+    4300010: Mesh statue
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 94%20Statue%20of%20Liberty
+    second: {fileID: 2100000, guid: cd88ea334418ba14b92676c2c254290e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_H10
+    second: {fileID: 2100000, guid: 902baf5aad4932b42aa5a453cb6e538e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Google Earth Snapshot1
+    second: {fileID: 2100000, guid: cdd67e1a68be47a4e932e228c5064446, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Statue-thumb
+    second: {fileID: 2100000, guid: 6794e973ae4f1c04eba157361af3dbe6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Beige_1
+    second: {fileID: 2100000, guid: c11d17784a18dce43946a44f81d7c815, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Black_
+    second: {fileID: 2100000, guid: ceac12b7d562ec240b44e65b7152316d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Brown_
+    second: {fileID: 2100000, guid: 131234e2d200eb34db5a4496d948f800, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Charcoal_
+    second: {fileID: 2100000, guid: 8d53beab3daf29f41a455868f1b677e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _DarkGoldenrod_
+    second: {fileID: 2100000, guid: bfeee732355ab51469cb740685de63bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Gray6_
+    second: {fileID: 2100000, guid: d45a0d683a06ef54e971e1310e76792f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Redwood_
+    second: {fileID: 2100000, guid: 033c8ab1d06f55647908c63727c5d903, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 8f1d1330fc6a5ab4a8d68bd6b97d9346, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: jean blue
+    second: {fileID: 2100000, guid: 98c6531f2fa1f8e48b5faecf7d370a2c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,926 @@
+fileFormatVersion: 2
+guid: 3e359a91858b2d74fa71d659e9e74899
+timeCreated: 1511586553
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 0000000001000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 91f0f8999020a98be6b088b24782c65f
+  longitude: -74.07670692791557
+  latitude: 40.81213873970833
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 228.5248, y: 99.51717, z: -23.16003}
+      lookAt: {x: -225.49734, y: -98.63475, z: 2.3586643}
+      up: {x: -0.39884153, y: 0.91674584, z: 0.022417221}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Component#1
+    100002: Component#1 1
+    100004: Component#1 2
+    100006: Component#1 3
+    100008: Component#13
+    100010: Component#14
+    100012: Component#14 1
+    100014: Component#14 2
+    100016: Component#14 3
+    100018: Component#14 4
+    100020: Component#14 5
+    100022: Component#14 6
+    100024: Component#14 7
+    100026: Component#15
+    100028: Component#15 1
+    100030: Component#15 2
+    100032: Component#15 3
+    100034: Component#16
+    100036: Component#17
+    100038: Component#17 1
+    100040: Component#18
+    100042: Component#2
+    100044: Component#2 1
+    100046: Component#22
+    100048: Component#22 1
+    100050: Component#22 2
+    100052: Component#22 3
+    100054: Component#24
+    100056: Component#24 1
+    100058: Component#24 2
+    100060: Component#24 3
+    100062: Component#24 4
+    100064: Component#24 5
+    100066: Component#24 6
+    100068: Component#24 7
+    100070: Component#26
+    100072: Component#26 1
+    100074: Component#26 2
+    100076: Component#26 3
+    100078: Component#28
+    100080: Component#28 1
+    100082: Component#28 2
+    100084: Component#28 3
+    100086: Component#28 4
+    100088: Component#28 5
+    100090: Component#28 6
+    100092: Component#28 7
+    100094: Component#29
+    100096: Component#29 1
+    100098: Component#29 2
+    100100: Component#29 3
+    100102: Component#29 4
+    100104: Component#29 5
+    100106: Component#29 6
+    100108: Component#29 7
+    100110: Component#3
+    100112: Component#34
+    100114: Component#34 1
+    100116: Component#34 2
+    100118: Component#34 3
+    100120: Component#34 4
+    100122: Component#34 5
+    100124: Component#35
+    100126: Component#35 1
+    100128: Component#35 10
+    100130: Component#35 11
+    100132: Component#35 12
+    100134: Component#35 13
+    100136: Component#35 14
+    100138: Component#35 15
+    100140: Component#35 16
+    100142: Component#35 17
+    100144: Component#35 18
+    100146: Component#35 19
+    100148: Component#35 2
+    100150: Component#35 20
+    100152: Component#35 21
+    100154: Component#35 22
+    100156: Component#35 23
+    100158: Component#35 24
+    100160: Component#35 25
+    100162: Component#35 26
+    100164: Component#35 27
+    100166: Component#35 3
+    100168: Component#35 4
+    100170: Component#35 5
+    100172: Component#35 6
+    100174: Component#35 7
+    100176: Component#35 8
+    100178: Component#35 9
+    100180: Component#37
+    100182: Component#37 1
+    100184: Component#37 2
+    100186: Component#37 3
+    100188: Component#4
+    100190: Component#5
+    100192: Component#6
+    100194: Component#6 1
+    100196: Component#7
+    100198: Component#8
+    100200: Component#8 1
+    100202: Component#8 10
+    100204: Component#8 11
+    100206: Component#8 12
+    100208: Component#8 13
+    100210: Component#8 14
+    100212: Component#8 15
+    100214: Component#8 2
+    100216: Component#8 3
+    100218: Component#8 4
+    100220: Component#8 5
+    100222: Component#8 6
+    100224: Component#8 7
+    100226: Component#8 8
+    100228: Component#8 9
+    100230: Component#9
+    100232: Component#9 1
+    100234: Component#9 2
+    100236: Component#9 3
+    100238: //RootNode
+    100240: Group 6
+    400000: Component#1
+    400002: Component#1 1
+    400004: Component#1 2
+    400006: Component#1 3
+    400008: Component#13
+    400010: Component#14
+    400012: Component#14 1
+    400014: Component#14 2
+    400016: Component#14 3
+    400018: Component#14 4
+    400020: Component#14 5
+    400022: Component#14 6
+    400024: Component#14 7
+    400026: Component#15
+    400028: Component#15 1
+    400030: Component#15 2
+    400032: Component#15 3
+    400034: Component#16
+    400036: Component#17
+    400038: Component#17 1
+    400040: Component#18
+    400042: Component#2
+    400044: Component#2 1
+    400046: Component#22
+    400048: Component#22 1
+    400050: Component#22 2
+    400052: Component#22 3
+    400054: Component#24
+    400056: Component#24 1
+    400058: Component#24 2
+    400060: Component#24 3
+    400062: Component#24 4
+    400064: Component#24 5
+    400066: Component#24 6
+    400068: Component#24 7
+    400070: Component#26
+    400072: Component#26 1
+    400074: Component#26 2
+    400076: Component#26 3
+    400078: Component#28
+    400080: Component#28 1
+    400082: Component#28 2
+    400084: Component#28 3
+    400086: Component#28 4
+    400088: Component#28 5
+    400090: Component#28 6
+    400092: Component#28 7
+    400094: Component#29
+    400096: Component#29 1
+    400098: Component#29 2
+    400100: Component#29 3
+    400102: Component#29 4
+    400104: Component#29 5
+    400106: Component#29 6
+    400108: Component#29 7
+    400110: Component#3
+    400112: Component#34
+    400114: Component#34 1
+    400116: Component#34 2
+    400118: Component#34 3
+    400120: Component#34 4
+    400122: Component#34 5
+    400124: Component#35
+    400126: Component#35 1
+    400128: Component#35 10
+    400130: Component#35 11
+    400132: Component#35 12
+    400134: Component#35 13
+    400136: Component#35 14
+    400138: Component#35 15
+    400140: Component#35 16
+    400142: Component#35 17
+    400144: Component#35 18
+    400146: Component#35 19
+    400148: Component#35 2
+    400150: Component#35 20
+    400152: Component#35 21
+    400154: Component#35 22
+    400156: Component#35 23
+    400158: Component#35 24
+    400160: Component#35 25
+    400162: Component#35 26
+    400164: Component#35 27
+    400166: Component#35 3
+    400168: Component#35 4
+    400170: Component#35 5
+    400172: Component#35 6
+    400174: Component#35 7
+    400176: Component#35 8
+    400178: Component#35 9
+    400180: Component#37
+    400182: Component#37 1
+    400184: Component#37 2
+    400186: Component#37 3
+    400188: Component#4
+    400190: Component#5
+    400192: Component#6
+    400194: Component#6 1
+    400196: Component#7
+    400198: Component#8
+    400200: Component#8 1
+    400202: Component#8 10
+    400204: Component#8 11
+    400206: Component#8 12
+    400208: Component#8 13
+    400210: Component#8 14
+    400212: Component#8 15
+    400214: Component#8 2
+    400216: Component#8 3
+    400218: Component#8 4
+    400220: Component#8 5
+    400222: Component#8 6
+    400224: Component#8 7
+    400226: Component#8 8
+    400228: Component#8 9
+    400230: Component#9
+    400232: Component#9 1
+    400234: Component#9 2
+    400236: Component#9 3
+    400238: //RootNode
+    400240: Group 6
+    2300000: Component#1
+    2300002: Component#1 1
+    2300004: Component#1 2
+    2300006: Component#1 3
+    2300008: Component#13
+    2300010: Component#14
+    2300012: Component#14 1
+    2300014: Component#14 2
+    2300016: Component#14 3
+    2300018: Component#14 4
+    2300020: Component#14 5
+    2300022: Component#14 6
+    2300024: Component#14 7
+    2300026: Component#15
+    2300028: Component#15 1
+    2300030: Component#15 2
+    2300032: Component#15 3
+    2300034: Component#16
+    2300036: Component#17
+    2300038: Component#17 1
+    2300040: Component#18
+    2300042: Component#2
+    2300044: Component#2 1
+    2300046: Component#22
+    2300048: Component#22 1
+    2300050: Component#22 2
+    2300052: Component#22 3
+    2300054: Component#24
+    2300056: Component#24 1
+    2300058: Component#24 2
+    2300060: Component#24 3
+    2300062: Component#24 4
+    2300064: Component#24 5
+    2300066: Component#24 6
+    2300068: Component#24 7
+    2300070: Component#26
+    2300072: Component#26 1
+    2300074: Component#26 2
+    2300076: Component#26 3
+    2300078: Component#28
+    2300080: Component#28 1
+    2300082: Component#28 2
+    2300084: Component#28 3
+    2300086: Component#28 4
+    2300088: Component#28 5
+    2300090: Component#28 6
+    2300092: Component#28 7
+    2300094: Component#29
+    2300096: Component#29 1
+    2300098: Component#29 2
+    2300100: Component#29 3
+    2300102: Component#29 4
+    2300104: Component#29 5
+    2300106: Component#29 6
+    2300108: Component#29 7
+    2300110: Component#3
+    2300112: Component#34
+    2300114: Component#34 1
+    2300116: Component#34 2
+    2300118: Component#34 3
+    2300120: Component#34 4
+    2300122: Component#34 5
+    2300124: Component#35
+    2300126: Component#35 1
+    2300128: Component#35 10
+    2300130: Component#35 11
+    2300132: Component#35 12
+    2300134: Component#35 13
+    2300136: Component#35 14
+    2300138: Component#35 15
+    2300140: Component#35 16
+    2300142: Component#35 17
+    2300144: Component#35 18
+    2300146: Component#35 19
+    2300148: Component#35 2
+    2300150: Component#35 20
+    2300152: Component#35 21
+    2300154: Component#35 22
+    2300156: Component#35 23
+    2300158: Component#35 24
+    2300160: Component#35 25
+    2300162: Component#35 26
+    2300164: Component#35 27
+    2300166: Component#35 3
+    2300168: Component#35 4
+    2300170: Component#35 5
+    2300172: Component#35 6
+    2300174: Component#35 7
+    2300176: Component#35 8
+    2300178: Component#35 9
+    2300180: Component#37
+    2300182: Component#37 1
+    2300184: Component#37 2
+    2300186: Component#37 3
+    2300188: Component#4
+    2300190: Component#5
+    2300192: Component#6
+    2300194: Component#6 1
+    2300196: Component#7
+    2300198: Component#8
+    2300200: Component#8 1
+    2300202: Component#8 10
+    2300204: Component#8 11
+    2300206: Component#8 12
+    2300208: Component#8 13
+    2300210: Component#8 14
+    2300212: Component#8 15
+    2300214: Component#8 2
+    2300216: Component#8 3
+    2300218: Component#8 4
+    2300220: Component#8 5
+    2300222: Component#8 6
+    2300224: Component#8 7
+    2300226: Component#8 8
+    2300228: Component#8 9
+    2300230: //RootNode
+    2300232: Group 6
+    3300000: Component#1
+    3300002: Component#1 1
+    3300004: Component#1 2
+    3300006: Component#1 3
+    3300008: Component#13
+    3300010: Component#14
+    3300012: Component#14 1
+    3300014: Component#14 2
+    3300016: Component#14 3
+    3300018: Component#14 4
+    3300020: Component#14 5
+    3300022: Component#14 6
+    3300024: Component#14 7
+    3300026: Component#15
+    3300028: Component#15 1
+    3300030: Component#15 2
+    3300032: Component#15 3
+    3300034: Component#16
+    3300036: Component#17
+    3300038: Component#17 1
+    3300040: Component#18
+    3300042: Component#2
+    3300044: Component#2 1
+    3300046: Component#22
+    3300048: Component#22 1
+    3300050: Component#22 2
+    3300052: Component#22 3
+    3300054: Component#24
+    3300056: Component#24 1
+    3300058: Component#24 2
+    3300060: Component#24 3
+    3300062: Component#24 4
+    3300064: Component#24 5
+    3300066: Component#24 6
+    3300068: Component#24 7
+    3300070: Component#26
+    3300072: Component#26 1
+    3300074: Component#26 2
+    3300076: Component#26 3
+    3300078: Component#28
+    3300080: Component#28 1
+    3300082: Component#28 2
+    3300084: Component#28 3
+    3300086: Component#28 4
+    3300088: Component#28 5
+    3300090: Component#28 6
+    3300092: Component#28 7
+    3300094: Component#29
+    3300096: Component#29 1
+    3300098: Component#29 2
+    3300100: Component#29 3
+    3300102: Component#29 4
+    3300104: Component#29 5
+    3300106: Component#29 6
+    3300108: Component#29 7
+    3300110: Component#3
+    3300112: Component#34
+    3300114: Component#34 1
+    3300116: Component#34 2
+    3300118: Component#34 3
+    3300120: Component#34 4
+    3300122: Component#34 5
+    3300124: Component#35
+    3300126: Component#35 1
+    3300128: Component#35 10
+    3300130: Component#35 11
+    3300132: Component#35 12
+    3300134: Component#35 13
+    3300136: Component#35 14
+    3300138: Component#35 15
+    3300140: Component#35 16
+    3300142: Component#35 17
+    3300144: Component#35 18
+    3300146: Component#35 19
+    3300148: Component#35 2
+    3300150: Component#35 20
+    3300152: Component#35 21
+    3300154: Component#35 22
+    3300156: Component#35 23
+    3300158: Component#35 24
+    3300160: Component#35 25
+    3300162: Component#35 26
+    3300164: Component#35 27
+    3300166: Component#35 3
+    3300168: Component#35 4
+    3300170: Component#35 5
+    3300172: Component#35 6
+    3300174: Component#35 7
+    3300176: Component#35 8
+    3300178: Component#35 9
+    3300180: Component#37
+    3300182: Component#37 1
+    3300184: Component#37 2
+    3300186: Component#37 3
+    3300188: Component#4
+    3300190: Component#5
+    3300192: Component#6
+    3300194: Component#6 1
+    3300196: Component#7
+    3300198: Component#8
+    3300200: Component#8 1
+    3300202: Component#8 10
+    3300204: Component#8 11
+    3300206: Component#8 12
+    3300208: Component#8 13
+    3300210: Component#8 14
+    3300212: Component#8 15
+    3300214: Component#8 2
+    3300216: Component#8 3
+    3300218: Component#8 4
+    3300220: Component#8 5
+    3300222: Component#8 6
+    3300224: Component#8 7
+    3300226: Component#8 8
+    3300228: Component#8 9
+    3300230: //RootNode
+    3300232: Group 6
+    4300000: Mesh Giants+Stadium
+    4300002: Mesh Group 6
+    4300004: Mesh Component#15
+    4300006: Mesh Component#8
+    4300008: Mesh Component#16
+    4300010: Mesh Component#3
+    4300012: Mesh Component#5
+    4300014: Mesh Component#7
+    4300016: Mesh Component#35
+    4300018: Mesh Component#37
+    4300020: Mesh Component#2
+    4300022: Mesh Component#6
+    4300024: Mesh Component#34
+    4300026: Mesh Component#17
+    4300028: Mesh Component#18
+    4300030: Mesh Component#1
+    4300032: Mesh Component#24
+    4300034: Mesh Component#28
+    4300036: Mesh Component#29
+    4300038: Mesh Component#28
+    4300040: Mesh Component#26
+    4300042: Mesh Component#14
+    4300044: Mesh Component#22
+    4300046: Mesh Component#4
+    4300048: Mesh Component#13
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fencing_Chain_Link
+    second: {fileID: 2100000, guid: 49116b38ec3c8f944b36a0ca69fa867b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium
+    second: {fileID: 2100000, guid: 2faa775f88ce9de46a9b6223207724c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium0000
+    second: {fileID: 2100000, guid: 196c043d01ea1d04a86374287254465b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium0001
+    second: {fileID: 2100000, guid: 78fb2226e6c13d141907e6d2d09f38a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium002
+    second: {fileID: 2100000, guid: b8329f64dc22f714d8894fcdec4df643, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium004
+    second: {fileID: 2100000, guid: 7d1c8422b6c5f3349ba11618e69d4327, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium005
+    second: {fileID: 2100000, guid: 348ae61929719714084777b2b691f1ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium006
+    second: {fileID: 2100000, guid: 905fb69d907862b4eae8bfd9882a7b34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium007
+    second: {fileID: 2100000, guid: 0148819684b3d6248b734522e2c93ccd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium008
+    second: {fileID: 2100000, guid: 0998c17a1aebc2d4fbba0bd4983052b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium011
+    second: {fileID: 2100000, guid: 26e74614c37aa484a9f7c9472ac688f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium012
+    second: {fileID: 2100000, guid: 5327aa1c2464a7e4b9b02dffdefd1242, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium013
+    second: {fileID: 2100000, guid: 93fa217fc367cc94f8ce878447a2deb0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium014
+    second: {fileID: 2100000, guid: 271a7a5caca28a643a3b92ce2ca49932, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium015
+    second: {fileID: 2100000, guid: d1f2ea8f0e7eb3341bea205805373339, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium016
+    second: {fileID: 2100000, guid: 07e96f2be4f594349966b28d5e28a91b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium017
+    second: {fileID: 2100000, guid: b245458ab231ab149bacdea10c745aaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium018
+    second: {fileID: 2100000, guid: f56420222439f52438aa5538ac80c5eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium021
+    second: {fileID: 2100000, guid: 8f3a8aa3bf8e53f41b664a461a42707a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium022
+    second: {fileID: 2100000, guid: b19d041fdd928694a8243ce2c107ed99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium023
+    second: {fileID: 2100000, guid: 0b9758a2be6ece84ca0f6958110dba4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium024
+    second: {fileID: 2100000, guid: 8c9d13248a5322a4ca01698b81a78bb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium025
+    second: {fileID: 2100000, guid: 32c5e21c481ddea42a6d64c3394cd8e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium027
+    second: {fileID: 2100000, guid: 79d350dce6190844cac8cd6e4b83fefc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium028
+    second: {fileID: 2100000, guid: 4dcbf8b016261de47bccbde1107adef8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium030
+    second: {fileID: 2100000, guid: 7843b867e3636254488e41ed903c84bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium033
+    second: {fileID: 2100000, guid: 60220fb0d13c41d41a5d756647c15c54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium035
+    second: {fileID: 2100000, guid: 4746b4dd3e1dc514dba8cd70f1cdf115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium039
+    second: {fileID: 2100000, guid: 84bac9b8697955040aac7bd9c5bc31a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium040
+    second: {fileID: 2100000, guid: 405d24c3e6634604280f8209ac6852cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium042
+    second: {fileID: 2100000, guid: 216cdfeb9473d964cb3b1201525a63c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium043
+    second: {fileID: 2100000, guid: 6f537019bcff43f47abe3ec5cfe52ac5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium044
+    second: {fileID: 2100000, guid: 1dbaa2c270f19b848886cabcc9d0175d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium045
+    second: {fileID: 2100000, guid: 840ff89238e9b384a82b0960e0164241, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium046
+    second: {fileID: 2100000, guid: 5df52d03fb1a4404baf8636ff71a474e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium047
+    second: {fileID: 2100000, guid: b81272c49ce8b1744b610b6e5ad4b720, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium048
+    second: {fileID: 2100000, guid: 70aa99ccb264ed440b70ecc5aa001066, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium049
+    second: {fileID: 2100000, guid: 01852c53ea89ab0429bd14ade19e61c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium050
+    second: {fileID: 2100000, guid: 035bdd718bae0504194dc4ba5be5e520, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium051
+    second: {fileID: 2100000, guid: 8b11928707e1ee04bac8c9afe1f60e58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium053
+    second: {fileID: 2100000, guid: ef84cc830d29cf841ace67e15dd31df2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium054
+    second: {fileID: 2100000, guid: 567a1322d2ea44347a7d7edec5363765, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium055
+    second: {fileID: 2100000, guid: ebf6cbc5a0c41fc4ea966e3211325223, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium0556
+    second: {fileID: 2100000, guid: 9478747e2add43746907abca66df73b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium057
+    second: {fileID: 2100000, guid: dc3928dd6c33d5a4abfe8d467afc0c14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium059
+    second: {fileID: 2100000, guid: eb9d1b2a042f38a409fe8972128b4056, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium060
+    second: {fileID: 2100000, guid: 50f353a5960bd6144a55b30a1b6f4bfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium061
+    second: {fileID: 2100000, guid: bc50b34b624436e4faee45d3e1335598, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium062
+    second: {fileID: 2100000, guid: c496d5ef6295719449f29a3828606144, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium064
+    second: {fileID: 2100000, guid: 449e1e98242b3e44b8dc4ba8b1b60f22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium065
+    second: {fileID: 2100000, guid: bd7ea306bc2444c4b8a5672f7b00bebb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium066
+    second: {fileID: 2100000, guid: 0e0184fd5f61a9a4d8f98098ecd0df97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium068
+    second: {fileID: 2100000, guid: 044130eec3cd05943abcdf1b2b795e47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium069
+    second: {fileID: 2100000, guid: 320cdcf5a4fd76043b12040b8d17498a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium070
+    second: {fileID: 2100000, guid: 83bdc1c3d60c78845a6e487228ed1aa8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium071
+    second: {fileID: 2100000, guid: 6ed71e172a7e313469841bd41bba32d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium072
+    second: {fileID: 2100000, guid: 08a4eb78461cad749a0f9be77fb92220, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium073
+    second: {fileID: 2100000, guid: bbce61261c39c5e40b74e275f14a7dbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium1
+    second: {fileID: 2100000, guid: 9ed2440874b8baa439be401fa104db3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium2
+    second: {fileID: 2100000, guid: d12fdf05fb0ed074880c31ffd6555942, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium3
+    second: {fileID: 2100000, guid: 8d6aa0bab74867441b0ab958ccc0e4a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Giants Stadium4
+    second: {fileID: 2100000, guid: d2a6833ee6a11bd43894f9bb1ea40d69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: f95e3e0ecb242094e829dbe8945c403c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gaintsStadium-Arieal
+    second: {fileID: 2100000, guid: dce5ba8226d23a34792a781dccea1084, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
