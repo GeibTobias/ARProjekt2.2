@@ -134,7 +134,9 @@ public class PoiScrollList : MonoBehaviour {
                 }
             }
 		}
-	}
+
+        RefreshDisplay();
+    }
 
 	public void RemoveItem(Item itemToRemove)
 	{

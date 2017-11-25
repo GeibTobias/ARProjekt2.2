@@ -60,8 +60,6 @@ public class RestConsumer : MonoBehaviour {
 
     public IEnumerator MapSettingUpdater()
     {
-        MapSettings lastUpdate = new MapSettings();
-        string[] lastPOI = { };
         float interval = this.refreshInterval; 
         while(true)
         {
