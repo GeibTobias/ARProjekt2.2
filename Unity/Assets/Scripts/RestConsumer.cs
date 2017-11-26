@@ -39,14 +39,15 @@ public class RestConsumer : MonoBehaviour {
         //mapUpdate += new onMapSettingUpdate(this.testMapEvent);
         //routeUpdate += new onRouteUpdate(this.testRouteEvent);
 
-        this.StartCoroutine(MapSettingUpdater());
+        this.StartCoroutine(serverSyncLoop());
     }
 
-    public IEnumerator setMapSettings(double lat, double lng, int zoom)
+    public IEnumerator setMapSettings(double deltaLat, double deltaLng)
     {
-        string url = string.Format("http://{0}:{1}/mapsync/mapset", this.server, this.port);
+        string url = string.Format("http://{0}:{1}/mapsync/mapsetdelta", this.server, this.port);
 
-        MapSettings ms = new MapSettings(lat, lng, zoom);
+        // parameter zoom is not used anymore here
+        MapSettings ms = new MapSettings(deltaLat, deltaLng, 0);
         string jsonData = JsonUtility.ToJson(ms);
 
         using (UnityWebRequest request = UnityWebRequest.Post(url, jsonData))
@@ -54,11 +55,10 @@ public class RestConsumer : MonoBehaviour {
             yield return request.SendWebRequest();
 
             isWebRequestError(request);
-            Debug.Log("sent");
         }
     }
 
-    public IEnumerator MapSettingUpdater()
+    public IEnumerator serverSyncLoop()
     {
         float interval = this.refreshInterval; 
         while(true)
@@ -72,6 +72,34 @@ public class RestConsumer : MonoBehaviour {
             {
                 Debug.LogError("Server connection error: " + e.Message);
             }
+        }
+    }
+
+    public IEnumerator incrementZoom()
+    {
+        Debug.Log("Increment zoom value");
+        string url = string.Format("http://{0}:{1}/mapsync/zoom/inc", this.server, this.port);
+
+        byte[] data = System.Text.Encoding.UTF8.GetBytes("inc");
+        using (UnityWebRequest request = UnityWebRequest.Put(url, data))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request);
+        }
+    }
+
+    public IEnumerator decrementZoom()
+    {
+        Debug.Log("Decrement zoom value");
+        string url = string.Format("http://{0}:{1}/mapsync/zoom/dec", this.server, this.port);
+
+        byte[] data = System.Text.Encoding.UTF8.GetBytes("dec");
+        using (UnityWebRequest request = UnityWebRequest.Put(url, data))
+        {
+            yield return request.SendWebRequest();
+
+            isWebRequestError(request);
         }
     }
 
