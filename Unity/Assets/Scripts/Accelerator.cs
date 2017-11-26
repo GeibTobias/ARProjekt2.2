@@ -24,31 +24,30 @@ public class Accelerator : MonoBehaviour {
 
 	void Update () 
 	{
-		
-		accX = Input.acceleration.x ;
-		accY = Input.acceleration.y ;
-		accZ = Input.acceleration.z ;
+		if (this.enabled) {
+			accX = Input.acceleration.x;
+			accY = Input.acceleration.y;
+			accZ = Input.acceleration.z;
 
-		if (accX < th) {
-			accX = 0;
-		}
+			if (accX < th) {
+				accX = 0;
+			}
 
-		if (accY < th) {
-			accY = 0;
-		}
+			if (accY < th) {
+				accY = 0;
+			}
 
-		if (accZ > 0) {
-			StartCoroutine(restConsumer.decrementZoom ());
-		} else {
-			StartCoroutine(restConsumer.incrementZoom ());
-		}
+			if (accZ > 0) {
+				StartCoroutine (restConsumer.decrementZoom ());
+			} else {
+				StartCoroutine (restConsumer.incrementZoom ());
+			}
 			
-		try
-		{
-			StartCoroutine(restConsumer.setMapSettings(accX, accY)); 
-		} catch(Exception e)
-		{
-			onRestError(e); 
+			try {
+				StartCoroutine (restConsumer.setMapSettings (accX, accY)); 
+			} catch (Exception e) {
+				onRestError (e); 
+			}
 		}
 	}
 
