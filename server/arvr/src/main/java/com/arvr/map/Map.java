@@ -12,6 +12,11 @@ public class Map {
 	private static Coordinate mapFocus; 
 	private static int mapZoom; 
 	
+	public static final int MIN_ZOOM_VALUE = 0; 
+	public static final int MAX_ZOOM_VALUE = 21; 
+	
+	public static Object zoomLock = new Object(); 
+	
 	protected Map() {
 		// first init mapFocus to Berlin
 		mapFocus = new Coordinate(new BigDecimal(13.413215), new BigDecimal(52.521918)); 

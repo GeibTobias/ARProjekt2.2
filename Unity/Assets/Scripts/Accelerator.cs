@@ -26,9 +26,9 @@ public class Accelerator : MonoBehaviour {
 		accZ = Input.acceleration.z ;
 
 		if (accZ > 0) {
-			restConsumer.deincrementZoom ();
+			StartCoroutine(restConsumer.decrementZoom ());
 		} else {
-			restConsumer.incrementZoom ();
+			StartCoroutine(restConsumer.incrementZoom ());
 		}
 			
 		try

@@ -1,5 +1,6 @@
 package com.arvr.websocket;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -45,6 +46,23 @@ public class MapUpdater {
 		
 		MapSettingUpdate msg = new MapSettingUpdate(Map.getCurrentMapFocus(), Map.getZoom()); 
 		this.template.convertAndSend("/map/update", msg);
+	}
+	
+	@SendTo("/map/zoomvalue")
+	public void sendZoomValue()
+	{
+		int zoom = Map.getZoom();
+		this.template.convertAndSend("/map/zoomvalue", zoom);
+	}
+	
+	@SendTo("/map/focusdelta")
+	public void sendMapFocusDelta(BigDecimal latDelta, BigDecimal lngDelta) {
+		
+		MapFocusDelta delta = new MapFocusDelta(); 
+		delta.latDelta = latDelta; 
+		delta.lngDelta = lngDelta; 
+		
+		this.template.convertAndSend("/map/focusdelta", delta);
 	}
 	
 	@MessageMapping("/setmap")

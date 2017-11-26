@@ -236,6 +236,14 @@ function connect() {
         stompClient.subscribe('/map/route/update', function (route) {
             onRouteUpdate(JSON.parse(route.body));
         });
+		
+		stompClient.subscribe('/map/focusdelta', function(data) {
+			onFocusDelta(JSON.parse(data.body));
+		});
+		
+		stompClient.subscribe('/map/zoomvalue', function(data) {
+            onZoomUpdate(JSON.parse(data.body));
+		});
     });
 
     socket.onclose = function (e) {
@@ -340,4 +348,20 @@ function addPOI(poi_string) {
 
 function removePOI(poi_string) {
     stompClient.send("/app/map/route/remove", {}, poi_string);
+}
+
+function onZoomUpdate(data) {
+    console.log("Zoom update with value: " + data);
+
+    //
+    // implement what you need here
+    //
+}
+
+function onFocusDelta(data) {
+    console.log("Focus delta update: ", data);
+
+    //
+    // implement what you need here
+    //
 }
