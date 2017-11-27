@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: bfb2af08396688f469296a951d6914be
+timeCreated: 1511803210
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 00000000010000000400000005000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 75a4a47c6f1125484dfdad51d749a3e3
+  longitude: -74.03603891609923
+  latitude: 40.720504741753906
+  northCorrection: 0.6289997119724262
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 109.810425, y: 72.37761, z: 66.901764}
+      lookAt: {x: -183.91351, y: -100.40117, z: -112.445564}
+      up: {x: -0.38293365, y: 0.89369494, z: -0.23381862}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Google Earth Snapshot
+    100002: //RootNode
+    400000: Google Earth Snapshot
+    400002: //RootNode
+    2300000: Google Earth Snapshot
+    2300002: //RootNode
+    3300000: Google Earth Snapshot
+    3300002: //RootNode
+    4300000: Mesh hudson-manhattan-railroad-powerhouse
+    4300002: Mesh Google Earth Snapshot
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Google Earth Snapshot1
+    second: {fileID: 2100000, guid: 62898e6632a3cdb48b0a110df07f69ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture
+    second: {fileID: 2100000, guid: 9e444ce786fec214dbdacc08b7ecdaac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture1
+    second: {fileID: 2100000, guid: 08c3189406936a147bd1620a7b082fcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture13
+    second: {fileID: 2100000, guid: 39d9e5b9b24460b41b65dcaf879ef9fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture14
+    second: {fileID: 2100000, guid: fe90c4563f510bd43b510fd54d939479, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture17
+    second: {fileID: 2100000, guid: dd55bf27310a74b4785c7daf347cc10b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture18
+    second: {fileID: 2100000, guid: aa001e70ff4591748b90727fb0460b16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture19
+    second: {fileID: 2100000, guid: 02200974d26bf624ba288653de57aee1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture20
+    second: {fileID: 2100000, guid: 7ec9c08a262db0b418fdb0255d93358f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture25
+    second: {fileID: 2100000, guid: 6d20ef3d7de46564eaea7588eb16fbff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture27
+    second: {fileID: 2100000, guid: 6845b010ad63fad4cb372fd22ee8d365, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture28
+    second: {fileID: 2100000, guid: 65d1201026016834cb87e16c714d0e4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture29
+    second: {fileID: 2100000, guid: 4e9375d54e282ab46817c51e0a646e4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture3
+    second: {fileID: 2100000, guid: 7d69c103a234e9145a1dbcf4a53d8ec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture31
+    second: {fileID: 2100000, guid: 05dab233124b186408878c07215ffc77, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture32
+    second: {fileID: 2100000, guid: 1b5cc0836fd23644cb36f6b2a26ba065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture33
+    second: {fileID: 2100000, guid: 6a4c07a52fb85bc43af2172ebdd41984, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture34
+    second: {fileID: 2100000, guid: 954da4c2ca3ebf3428df3039ad2728b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture37
+    second: {fileID: 2100000, guid: 6a0c09e278a4bc54f9bf49631b299f71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture38
+    second: {fileID: 2100000, guid: 1ecfde2004ad0c44b8718b59792687b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture41
+    second: {fileID: 2100000, guid: 5e5bd4a15d5d9dc458e61150b8420e3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture42
+    second: {fileID: 2100000, guid: 152fd52def6da294f9c1ce180c7c8d0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture43
+    second: {fileID: 2100000, guid: bf82117e785ad8847ac3ff5a576b5a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture44
+    second: {fileID: 2100000, guid: 44baa8b03238da842ba4ede645958449, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture45
+    second: {fileID: 2100000, guid: 600ee81b2a48f9244a47f8bb28ef9744, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture48
+    second: {fileID: 2100000, guid: daa1405ae389c354586d7a9e65e83e58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture49
+    second: {fileID: 2100000, guid: 4bd44da8312f77f498930682b760baea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture55
+    second: {fileID: 2100000, guid: 774b8d248d0320b479306bd24f516025, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture56
+    second: {fileID: 2100000, guid: 30381535f2653994aaeaafee99ee39af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo Texture8
+    second: {fileID: 2100000, guid: 175f6c4b45ebd0f48beede36e4c851fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 55f8b8b7a27ecee4a892351b532c10cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: c411f6f676cda2143b905ef224aeea1c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,8 +2,18 @@ var directionsDisplay;
 var map;
 var toVisitPoiIDs = [];
 var pois = [];
-var ourPlaces = ["ChIJN0qhSgJZwokRmQJ-MIEQq08", "ChIJtcaxrqlZwokRfwmmibzPsTU", "ChIJRYGi0o5QwokRLsLNYgBkDgg",
-    "ChIJUTiWKXr4wokRk_1163uixUo", "ChIJU9Xo0Y5QwokRbO3nMatPCHk"];
+var ourPlaces = [
+	"ChIJtcaxrqlZwokRfwmmibzPsTU", // 1 Empire State Building
+	"ChIJRYGi0o5QwokRLsLNYgBkDgg", // 2 World Trade Center
+	"ChIJU9Xo0Y5QwokRbO3nMatPCHk", // 3 Statue of Liberty
+	//"ChIJN0qhSgJZwokRmQJ", 			// 4 Chrysler Building
+	"ChIJUTiWKXr4wokRk_1163uixUo", // 5 Giants Stadium
+	"ChIJ9U1mz_5YwokRosza1aAk0jM", // 6 Rockefeller Center
+	"ChIJhRwB-yFawokR5Phil-QQ3zM", // 7 Madison Square Garden
+	"ChIJpZ94gKxQwokR7HubSvEHX8E", // 8 Hudson Railroad Powerhouse 
+	"ChIJbVfZzhBawokRnmCT-muojBA", // 9 Trinity Church
+	"ChIJu2hT8_pYwokRF1qb5poRsMU" // 10 Pokemon Center / Trump Tower
+	];
 
 function findPoi(id) {
     return pois.find(function (poi) {
