@@ -27,7 +27,7 @@ function addMarker(place, codeID) {
         position: place.geometry.location,
         icon: {
             url: image,
-            scaledSize: new google.maps.Size(146, 71)
+            scaledSize: new google.maps.Size(205, 100)
         }
     });
 }
