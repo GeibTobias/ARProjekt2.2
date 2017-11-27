@@ -314,13 +314,12 @@ function sendMapUpdate(lattitude, longtitude, zoom) {
     // updates will be send to server
     //
     // example how to send!
-    // old: stompClient.send("/app/setmap", {}, JSON.stringify({'coords': { 'lattitude' : 232.23, 'longtitude' : '4555.4323' }, 'zoom' : 1 }));
     stompClient.send("/app/setmap", {}, JSON.stringify({
-        'coords': {
-            'lat': 232.23,
-            'lng': '4555.4323'
+        coords: {
+            lat: 40.748742,
+            lng: -73.985611
         },
-        'zoom': 1
+        zoom: 14
     }));
 }
 
@@ -356,6 +355,7 @@ function onZoomUpdate(data) {
     //
     // implement what you need here
     //
+    map.setZoom(data);
 }
 
 function onFocusDelta(data) {
@@ -364,4 +364,5 @@ function onFocusDelta(data) {
     //
     // implement what you need here
     //
+    maps.panBy(data.lat, data.lng)
 }
