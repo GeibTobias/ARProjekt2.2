@@ -1,7 +1,6 @@
 var directionsDisplay;
 var map;
 var toVisitPoiIDs = [];
-var pois = [,,,,,,,,,];
 var ourPlaces = [
 	"ChIJtcaxrqlZwokRfwmmibzPsTU", // 1 Empire State Building
 	"ChIJRYGi0o5QwokRLsLNYgBkDgg", // 2 World Trade Center
@@ -14,6 +13,7 @@ var ourPlaces = [
 	"ChIJbVfZzhBawokRnmCT-muojBA", // 9 Trinity Church
 	"ChIJu2hT8_pYwokRF1qb5poRsMU" // 10 Pokemon Center / Trump Tower
 	];
+var pois = Array(ourPlaces.length).fill(undefined);
 
 function findPoi(id) {
     return pois.find(function (poi) {
@@ -24,11 +24,7 @@ function findPoi(id) {
 function addMarker(place, codeID) {
     console.log("addMaker: " + place + " - " + codeID)
     id = codeID;
-    //if (id < 10) {
-    //    id = '0' + id;
-    //}
     var image = 'images/Chateau/Chateau_' + id + '.png'
-    //var image = 'images/Chateau/Chateau_1.png'
 
     // If the request succeeds, draw the place location on
     // the map as a marker, and register an event to handle a
@@ -78,10 +74,7 @@ function initPois(startLocation, callback) {
 function initPoisWithIds(ids, callback) {
     var service = new google.maps.places.PlacesService(map);
 
-    var callbackCount = 0;
-    var i = 0;
-	
-	//pois = new Array(ourPlaces.length).fill(undefined); 
+    var callbackCount = 1;
 
     ids.forEach(function (id) {
         service.getDetails({
@@ -89,11 +82,11 @@ function initPoisWithIds(ids, callback) {
         }, function (result, status) {
 			
 			var index = ourPlaces.indexOf(result.place_id); 
-			pois[index] = result; 
-            //pois.push(result);
-            addMarker(result, index);
+            result.place_id = ourPlaces[index];
+			pois[index] = result;
+            addMarker(result, index+1);
 
-            if (callbackCount == 10) {
+            if (callbackCount >= ids.length) {
                 callback()
             } else {
                 callbackCount++;
