@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: 6693c98946c47d4419bf6d74677bf704
+timeCreated: 1511806903
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 00000000010000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 1e2f0e9439d41e5ec53816371031d7d2
+  longitude: -72.74626095364353
+  latitude: 42.12704115925713
+  northCorrection: 1.512432484809267
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -22.212303, y: 29.99706, z: 43.880966}
+      lookAt: {x: 3.8711357, y: -15.28408, z: -50.265984}
+      up: {x: 0.11227769, y: 0.90728015, z: -0.40526104}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Google Earth Snapshot
+    100002: Group 10
+    100004: Group 12
+    100006: Group 14
+    100008: Group 16
+    100010: Group 18
+    100012: Group 20
+    100014: Group 6
+    100016: Group 8
+    100018: //RootNode
+    400000: Google Earth Snapshot
+    400002: Group 10
+    400004: Group 12
+    400006: Group 14
+    400008: Group 16
+    400010: Group 18
+    400012: Group 20
+    400014: Group 6
+    400016: Group 8
+    400018: //RootNode
+    2300000: Google Earth Snapshot
+    2300002: Group 10
+    2300004: Group 12
+    2300006: Group 14
+    2300008: Group 16
+    2300010: Group 18
+    2300012: Group 20
+    2300014: Group 6
+    2300016: Group 8
+    2300018: //RootNode
+    3300000: Google Earth Snapshot
+    3300002: Group 10
+    3300004: Group 12
+    3300006: Group 14
+    3300008: Group 16
+    3300010: Group 18
+    3300012: Group 20
+    3300014: Group 6
+    3300016: Group 8
+    3300018: //RootNode
+    4300000: Mesh trinity_church
+    4300002: Mesh Google Earth Snapshot
+    4300004: Mesh Group 6
+    4300006: Mesh Group 8
+    4300008: Mesh Group 10
+    4300010: Mesh Group 14
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back Resized
+    second: {fileID: 2100000, guid: e48f80485c57b0143987443c8a73917a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back Shed Area From Back Resize
+    second: {fileID: 2100000, guid: 21cb0db8890bb4c46952142859379cd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back Shed Area Resize
+    second: {fileID: 2100000, guid: a53dd7fa665494b488c8b4226f73dc4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brick_Rough_Tan
+    second: {fileID: 2100000, guid: 5ac4fdf9688d15e498c9977291448005, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Candle Stain Glass Resize
+    second: {fileID: 2100000, guid: 04a459aac1e738b449082647840748dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_F09
+    second: {fileID: 2100000, guid: 54f7e3a16507e89489d2bc5848811a30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cross Stain Glass Resize
+    second: {fileID: 2100000, guid: bc7d986cf8205d6488dce38529384b3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Front Resized
+    second: {fileID: 2100000, guid: 4c5e83834e62e3d4c880fc76a097a25e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Google Earth Snapshot1
+    second: {fileID: 2100000, guid: 1a513032a955eec418cdbea5d7f6fd1f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamb Stain Glass Resize
+    second: {fileID: 2100000, guid: 29cdc0632b8401749957c654a24363df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Last Stain Glass Resize
+    second: {fileID: 2100000, guid: d73994c99c9a6d84f99922b375cacd38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rectory Side Resize
+    second: {fileID: 2100000, guid: 95f01f1ea8591cb409194f56559e6f18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roofing_Shingles_Asphalt
+    second: {fileID: 2100000, guid: 8dc09cf0280665a4aba5742c2ca89b86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: School Side Back Resize
+    second: {fileID: 2100000, guid: 91f436a08a665fb4bb193e1ced3c777e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: School Side Door Resize
+    second: {fileID: 2100000, guid: fca141ef78e3cd846984c507561e2e11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Side Entrance Front Side
+    second: {fileID: 2100000, guid: 687faff00aa482849a18708c8981c46d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Side Entrance Resize
+    second: {fileID: 2100000, guid: 7f81368d2d14da742b7859e42da9b848, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone_Brushed_Khaki
+    second: {fileID: 2100000, guid: 9d4d04e0f9ffb244f92484f7cbdcac9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top Portion Resize Take Two
+    second: {fileID: 2100000, guid: 68b210c0b25d67d4294b7fd3d6df32de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower Back Resize
+    second: {fileID: 2100000, guid: 793cc65bfa1af20499aacfdbc85776bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower Front Resize
+    second: {fileID: 2100000, guid: eb5dcbcabf4787e49a220aedadbe343d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower Side Bottom Resize
+    second: {fileID: 2100000, guid: 72f65ef24507c924e9183223cb8711e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tower Side Top Resize
+    second: {fileID: 2100000, guid: b5e9b3ef45d68284b86933428e912de3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: c6ff7e179406e0f42b1d9fcc0823d79e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
