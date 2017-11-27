@@ -18,16 +18,20 @@ public class Accelerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		restConsumer = GameObject.Find("RestConsumer").GetComponent<RestConsumer>();
-		th = 0.5f;
+		th = 0.01f;
 	}
 
 
 	void Update () 
 	{
 		if (this.enabled) {
+			Debug.Log (Input.acceleration.x);
 			accX = Input.acceleration.x;
 			accY = Input.acceleration.y;
 			accZ = Input.acceleration.z;
+
+			accX = 0.5f;
+			Debug.Log (accX);
 
 			if (accX < th) {
 				accX = 0;
@@ -37,9 +41,9 @@ public class Accelerator : MonoBehaviour {
 				accY = 0;
 			}
 
-			if (accZ > 0) {
+			if (accZ > th) {
 				StartCoroutine (restConsumer.decrementZoom ());
-			} else {
+			} else if (accZ < -th) {
 				StartCoroutine (restConsumer.incrementZoom ());
 			}
 			
