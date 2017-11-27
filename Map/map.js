@@ -2,7 +2,8 @@ var directionsDisplay;
 var map;
 var toVisitPoiIDs = [];
 var pois = [];
-var ourPlaces = ["ChIJN0qhSgJZwokRmQJ-MIEQq08", "ChIJtcaxrqlZwokRfwmmibzPsTU"];
+var ourPlaces = ["ChIJN0qhSgJZwokRmQJ-MIEQq08", "ChIJtcaxrqlZwokRfwmmibzPsTU", "ChIJRYGi0o5QwokRLsLNYgBkDgg",
+    "ChIJUTiWKXr4wokRk_1163uixUo", "ChIJU9Xo0Y5QwokRbO3nMatPCHk"];
 
 function findPoi(id) {
     return pois.find(function (poi) {
