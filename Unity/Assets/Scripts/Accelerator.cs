@@ -30,6 +30,8 @@ public class Accelerator : MonoBehaviour {
 			accY = Input.acceleration.y;
 			accZ = Input.acceleration.z;
 
+			accX = 0.5f;
+			Debug.Log (accX);
 
 			if (accX < th) {
 				accX = 0;
