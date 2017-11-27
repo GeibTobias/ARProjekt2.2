@@ -17,7 +17,11 @@ var pois = Array(ourPlaces.length).fill(undefined);
 
 function findPoi(id) {
     return pois.find(function (poi) {
-        return poi.place_id == id;
+        if (poi != null) {
+            return poi.place_id == id;
+        } else {
+            return false;
+        }
     });
 }
 

@@ -94,7 +94,7 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
 			if (int.Parse(poi.trackerID) == int.Parse(mTrackableBehaviour.VuMarkTarget.InstanceId.StringValue)) {
 				component.enabled = true;
 			}
-			//Debug.Log(poi.trackerID + " collider enabled: " + component.enabled);
+			Debug.Log(poi.trackerID + " collider enabled: " + component.enabled + " StringValue: " + mTrackableBehaviour.VuMarkTarget.InstanceId.StringValue);
 		}
 
 		// Enable canvas':
