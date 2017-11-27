@@ -6,13 +6,20 @@ using System;
 
 public class Accelerator : MonoBehaviour {
 
+	public Button myButton;
+
+	private bool runScript;
 
 	public float accX;
 	public float accY;
 	public float accZ;
 
+	public int mapConstant;
+
+	public float timeStep;
+
 	private float th;
-	private int nextUpdate=1;
+	private float nextUpdate=0.5f;
 
 	public RestConsumer restConsumer;
 
@@ -20,57 +27,67 @@ public class Accelerator : MonoBehaviour {
 	void Start () {
 		restConsumer = GameObject.Find("RestConsumer").GetComponent<RestConsumer>();
 		this.accX = this.accY = this.accZ = 0;
-		th = 0.01f;
+		th = 0.25f;
+		myButton.onClick.AddListener (ActivateNav);
+		runScript = false;
+		Screen.orientation = ScreenOrientation.LandscapeRight; 
+		mapConstant = 100;
+		timeStep = 0.2f;
 	}
 		
 
 	// Update is called once per frame
 	void Update(){
-
+		
 		updateAcc ();
 
 		if (Time.time >= nextUpdate) {
-			Debug.Log (Time.time + ">=" + nextUpdate);
+//			Debug.Log (Time.time + ">=" + nextUpdate);
 
-			nextUpdate = Mathf.FloorToInt (Time.time) + 1;
+			nextUpdate = Time.time + timeStep;
 
 			setMap (accX, accY, accZ);
 		}
 	}
 
 	private void updateAcc(){
-		if (this.enabled) {
+		if (runScript) {
 
-			this.accX = Input.acceleration.x;
-			this.accY = Input.acceleration.y;
-			this.accZ = Input.acceleration.z;
+			Vector3 acc = Input.acceleration;
+			acc = Quaternion.Euler (90, 0, 0) * acc;
 
+			this.accX = acc.x;
+			this.accY = acc.y;
+			this.accZ = acc.z;
 
-			this.accX = 0.5f;
+//			this.accX = 0.5f;
 			if (Mathf.Abs (this.accX) < th) {
 				this.accX = 0;
+			}
+
+			if (Mathf.Abs (this.accY) < th) {
+				this.accY = 0;
 			}
 
 			if (Mathf.Abs (this.accZ) < th) {
 				this.accZ = 0;
 			}
 
-			if (Mathf.Abs (this.accY) < th) {
-				this.accZ = 0;
-			}
-		}
+		} 
 	}
 
+	void ActivateNav (){
+		runScript = !runScript;
+	}
 
 	private void setMap(float accX, float accY, float accZ) {
-		if (this.enabled) {
+		if (runScript) {
 			Debug.Log (accX);
-			StartCoroutine (restConsumer.setMapSettings (accX, accZ));
-			if (accY > 0) {
-				StartCoroutine (restConsumer.decrementZoom ());
-			} else if (accY < 0) {
-				StartCoroutine (restConsumer.incrementZoom ());
-			}
+			float deltaX = accX * mapConstant ;
+			float deltaZ = -accZ * mapConstant ;
+			StartCoroutine (restConsumer.setMapSettings (deltaX, deltaZ));
+
+
 			this.accX = this.accY = this.accZ = 0;
 		}
 	}
