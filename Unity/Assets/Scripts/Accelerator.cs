@@ -12,46 +12,66 @@ public class Accelerator : MonoBehaviour {
 	public float accZ;
 
 	private float th;
+	private int nextUpdate=1;
 
 	public RestConsumer restConsumer;
 
 	// Use this for initialization
 	void Start () {
 		restConsumer = GameObject.Find("RestConsumer").GetComponent<RestConsumer>();
+		this.accX = this.accY = this.accZ = 0;
 		th = 0.01f;
+	}
+		
+
+	// Update is called once per frame
+	void Update(){
+
+		updateAcc ();
+
+		if (Time.time >= nextUpdate) {
+			Debug.Log (Time.time + ">=" + nextUpdate);
+
+			nextUpdate = Mathf.FloorToInt (Time.time) + 1;
+
+			setMap (accX, accY, accZ);
+		}
+	}
+
+	private void updateAcc(){
+		if (this.enabled) {
+
+			this.accX = Input.acceleration.x;
+			this.accY = Input.acceleration.y;
+			this.accZ = Input.acceleration.z;
+
+
+			this.accX = 0.5f;
+			if (Mathf.Abs (this.accX) < th) {
+				this.accX = 0;
+			}
+
+			if (Mathf.Abs (this.accZ) < th) {
+				this.accZ = 0;
+			}
+
+			if (Mathf.Abs (this.accY) < th) {
+				this.accZ = 0;
+			}
+		}
 	}
 
 
-	void Update () 
-	{
+	private void setMap(float accX, float accY, float accZ) {
 		if (this.enabled) {
-			Debug.Log (Input.acceleration.x);
-			accX = Input.acceleration.x;
-			accY = Input.acceleration.y;
-			accZ = Input.acceleration.z;
-
-			accX = 0.5f;
 			Debug.Log (accX);
-
-			if (accX < th) {
-				accX = 0;
-			}
-
-			if (accY < th) {
-				accY = 0;
-			}
-
-			if (accZ > th) {
+			StartCoroutine (restConsumer.setMapSettings (accX, accZ));
+			if (accY > 0) {
 				StartCoroutine (restConsumer.decrementZoom ());
-			} else if (accZ < -th) {
+			} else if (accY < 0) {
 				StartCoroutine (restConsumer.incrementZoom ());
 			}
-			
-			try {
-				StartCoroutine (restConsumer.setMapSettings (accX, accY)); 
-			} catch (Exception e) {
-				onRestError (e); 
-			}
+			this.accX = this.accY = this.accZ = 0;
 		}
 	}
 

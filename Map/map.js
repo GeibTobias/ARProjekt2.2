@@ -365,5 +365,5 @@ function onFocusDelta(data) {
     //
     // implement what you need here
     //
-    map.panBy(data.lat, data.lng)
+    map.panBy(data.latDelta, data.lngDelta)
 }
