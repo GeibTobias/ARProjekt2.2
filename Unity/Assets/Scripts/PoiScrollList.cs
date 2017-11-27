@@ -112,7 +112,6 @@ public class PoiScrollList : MonoBehaviour {
 		itemList.Clear();
 
 		POI[] poiList = vuMark.GetComponentsInChildren<POI> ();
-		Debug.Log ("poiList length: " + poiList.Length);
 		List<POI> pois = new List<POI> (poiList);
 
 //		GameObject[] poiObjList = GameObject.FindGameObjectsWithTag ("POI");

@@ -121,7 +121,6 @@ public class MapSync {
 
 		
 			log.info("Map Setting Update: " + settings.lat + " : " + settings.lng + ". Zoom: " + settings.zoom);
-			Map.setZoom(settings.zoom);
 
 			Map.setFocus(new BigDecimal(settings.lat), new BigDecimal(settings.lng));
 		} catch (Exception e) {
@@ -146,7 +145,6 @@ public class MapSync {
 			currentCoords.lat = currentCoords.lat.add(new BigDecimal(settings.lat));
 			currentCoords.lng = currentCoords.lng.add(new BigDecimal(settings.lng));
 			
-			Map.setZoom(settings.zoom);
 			Map.setFocus(currentCoords.lat, currentCoords.lng);
 			
 			mapUpdater.sendMapFocusDelta(new BigDecimal(settings.lat), new BigDecimal(settings.lng));

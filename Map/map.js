@@ -1,12 +1,12 @@
 var directionsDisplay;
 var map;
 var toVisitPoiIDs = [];
-var pois = [];
+var pois = [,,,,,,,,,];
 var ourPlaces = [
 	"ChIJtcaxrqlZwokRfwmmibzPsTU", // 1 Empire State Building
 	"ChIJRYGi0o5QwokRLsLNYgBkDgg", // 2 World Trade Center
 	"ChIJU9Xo0Y5QwokRbO3nMatPCHk", // 3 Statue of Liberty
-	//"ChIJN0qhSgJZwokRmQJ", 			// 4 Chrysler Building
+	"ChIJN0qhSgJZwokRmQJ-MIEQq08", // 4 Chrysler Building
 	"ChIJUTiWKXr4wokRk_1163uixUo", // 5 Giants Stadium
 	"ChIJ9U1mz_5YwokRosza1aAk0jM", // 6 Rockefeller Center
 	"ChIJhRwB-yFawokR5Phil-QQ3zM", // 7 Madison Square Garden
@@ -80,15 +80,20 @@ function initPoisWithIds(ids, callback) {
 
     var callbackCount = 0;
     var i = 0;
+	
+	//pois = new Array(ourPlaces.length).fill(undefined); 
 
     ids.forEach(function (id) {
         service.getDetails({
             placeId: id
         }, function (result, status) {
-            pois.push(result);
-            addMarker(result, pois.length);
+			
+			var index = ourPlaces.indexOf(result.place_id); 
+			pois[index] = result; 
+            //pois.push(result);
+            addMarker(result, index);
 
-            if (callbackCount == ids.length) {
+            if (callbackCount == 10) {
                 callback()
             } else {
                 callbackCount++;
@@ -190,8 +195,8 @@ function adaptMarkerToZoomLevel(level) {
                      32768,
                      32768,
                      2024,
-                     1024,
-                     512,
+                     1500,
+                     768,
                      256,
                      128,
                      64,

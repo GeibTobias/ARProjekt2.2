@@ -20,7 +20,7 @@ public class Map {
 	protected Map() {
 		// first init mapFocus to Berlin
 		mapFocus = new Coordinate(new BigDecimal(13.413215), new BigDecimal(52.521918)); 
-		mapZoom = 4; 
+		mapZoom = 14; 
 	}
 	
 	public static Map getInstance() {	

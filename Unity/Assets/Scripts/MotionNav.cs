@@ -176,31 +176,31 @@ public class MotionNav : MonoBehaviour {
 			}
 			break;
 		case ButtonPress.down:
-			while (upButtonPressed) {
+			while (downButtonPressed) {
 				sendEventToServer (ButtonPress.down);
 				yield return new WaitForSeconds (1);
 			}
 			break;
 		case ButtonPress.left:
-			while (upButtonPressed) {
+			while (leftButtonPressed) {
 				sendEventToServer (ButtonPress.left);
 				yield return new WaitForSeconds (1);
 			}
 			break;
 		case ButtonPress.right:
-			while (upButtonPressed) {
+			while (rightButtonPressed) {
 				sendEventToServer (ButtonPress.right);
 				yield return new WaitForSeconds (1);
 			}
 			break;
 		case ButtonPress.plus:
-			while (upButtonPressed) {
+			while (plusButtonPressed) {
 				sendEventToServer (ButtonPress.plus);
 				yield return new WaitForSeconds (1);
 			}
 			break;
 		case ButtonPress.minus:
-			while (upButtonPressed) {
+			while (minusButtonPressed) {
 				sendEventToServer (ButtonPress.minus);
 				yield return new WaitForSeconds (1);
 			}
@@ -213,23 +213,23 @@ public class MotionNav : MonoBehaviour {
 	void sendEventToServer(ButtonPress btnPr) {
 		switch (btnPr) {
 		case ButtonPress.up:
-			restConsumer.setMapSettings (100, 0);
+			StartCoroutine(restConsumer.setMapSettings (0, -100));
 			Debug.Log ("up");
 			break;
 		case ButtonPress.down:
-			restConsumer.setMapSettings (-100, 0);
+			StartCoroutine(restConsumer.setMapSettings (0, 100));
 			break;
 		case ButtonPress.left:
-			restConsumer.setMapSettings (0, -100);
+                StartCoroutine(restConsumer.setMapSettings (-100, 0));
 			break;
 		case ButtonPress.right:
-			restConsumer.setMapSettings (0, 100);
+            StartCoroutine(restConsumer.setMapSettings (100, 0));
 			break;
 		case ButtonPress.plus:
-			restConsumer.incrementZoom ();
+            StartCoroutine(restConsumer.incrementZoom ());
 			break;
 		case ButtonPress.minus:
-			restConsumer.incrementZoom ();
+            StartCoroutine(restConsumer.decrementZoom ());
 			break;
 		default:
 			break;

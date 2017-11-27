@@ -42,8 +42,7 @@ public class Accelerator : MonoBehaviour {
 		updateAcc ();
 
 		if (Time.time >= nextUpdate) {
-//			Debug.Log (Time.time + ">=" + nextUpdate);
-
+            //			Debug.Log (Time.time + ">=" + nextUpdate);
 			nextUpdate = Time.time + timeStep;
 
 			setMap (accX, accY, accZ);
@@ -81,8 +80,8 @@ public class Accelerator : MonoBehaviour {
 	}
 
 	private void setMap(float accX, float accY, float accZ) {
-		if (runScript) {
-			Debug.Log (accX);
+		if (runScript && (accX != 0 || accZ != 0)) {
+			//Debug.Log (accX);
 			float deltaX = accX * mapConstant ;
 			float deltaZ = -accZ * mapConstant ;
 			StartCoroutine (restConsumer.setMapSettings (deltaX, deltaZ));
