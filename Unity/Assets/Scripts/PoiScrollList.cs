@@ -26,6 +26,7 @@ public class PoiScrollList : MonoBehaviour {
 	public SimpleObjectPool poiObjectPool;
 
     public RestConsumer restConsumer; 
+	public GameObject vuMark;
 
 
 	// Use this for initialization
@@ -110,15 +111,19 @@ public class PoiScrollList : MonoBehaviour {
 	public void UpdateItemList(string[] itemsToAdd) {
 		itemList.Clear();
 
-		GameObject[] poiObjList = GameObject.FindGameObjectsWithTag ("POI");
-		List<POI> pois = new List<POI>();
+		POI[] poiList = vuMark.GetComponentsInChildren<POI> ();
+		Debug.Log ("poiList length: " + poiList.Length);
+		List<POI> pois = new List<POI> (poiList);
 
-		foreach (GameObject poiObj in poiObjList) {
-			POI poi = poiObj.GetComponent<POI> ();
-			if (poi) {
-				pois.Add (poi);
-			}
-		}
+//		GameObject[] poiObjList = GameObject.FindGameObjectsWithTag ("POI");
+//		List<POI> pois = new List<POI>();
+
+//		foreach (GameObject poiObj in poiObjList) {
+//			POI poi = poiObj.GetComponent<POI> ();
+//			if (poi) {
+//				pois.Add (poi);
+//			}
+//		}
 
 		foreach (string poiID in itemsToAdd) {
 			POI poi = pois.Find(x => x.poiID == poiID);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465934, g: 0.49642956, b: 0.57482487, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9560a1e544a3df41b2cfe36683bf8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  server: 127.0.0.1
+  server: 172.20.10.11
   port: 8080
   refreshInterval: 1
 --- !u!4 &67652658
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poiID: ChIJRYGi0o5QwokRLsLNYgBkDgg
-  trackerID: 8
+  trackerID: 2
   poiName: World Trade Center
   poiImage: {fileID: 21300000, guid: 5fd50dedfc97df64db73798f47f18e8e, type: 3}
   content: {fileID: 1743389154}
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poiID: ChIJU9Xo0Y5QwokRbO3nMatPCHk
-  trackerID: 6
+  trackerID: 3
   poiName: Statue of Liberty
   poiImage: {fileID: 21300000, guid: ac9a24b463c240e488f765f175281a4d, type: 3}
   content: {fileID: 1743389154}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poiID: ChIJN0qhSgJZwokRmQJ
-  trackerID: 7
+  trackerID: 4
   poiName: Chrysler Building
   poiImage: {fileID: 21300000, guid: cfe155ddc47a9483d83ae194f3c07148, type: 3}
   content: {fileID: 1743389154}
@@ -1709,7 +1709,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1470891777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 332, y: 137, z: 0}
+  m_LocalPosition: {x: 745.5, y: 419, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 938361635}
@@ -2049,7 +2049,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685819318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -24.199966, z: 0}
+  m_LocalPosition: {x: 0, y: -306.19995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 938361635}
@@ -2192,7 +2192,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1743389154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000014195755, y: 0.117614746, z: 0}
+  m_LocalPosition: {x: 0.000014195755, y: 0.080596924, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2112385944}
@@ -2200,7 +2200,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000014195755, y: 325.8676}
+  m_AnchoredPosition: {x: 0.000014195755, y: 325.8306}
   m_SizeDelta: {x: 0, y: 428.41}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1743389156
@@ -2330,7 +2330,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1878807668}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9986195
+  m_Size: 0.99979305
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2464,7 +2464,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878807667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.43588257, z: 0}
+  m_LocalPosition: {x: 0, y: -0.065338135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1482670723}
